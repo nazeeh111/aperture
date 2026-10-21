@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-21",
+  "core_modified": true,
+  "helper_change": "Close HTTPError response bodies before recording failure.",
+  "files": {
+    "research/SKILL.md": "a460ca58f1525b788cdb39f75cfec47e86f856665d9b542439bc28545c558263",
+    "research/agents/openai.yaml": "46fe171b93e31a4587e332c29ba881564b0b313cb41d6d7c2b5e82383f0cfe07",
+    "research/scripts/snapshot_github.py": "fd018f824d66fcf0b2ddac97dca9ea76f95c6758510d96ba78e0ad78fddd0b43",
+    "evaluation/cases.md": "99a4efafe92764a42742c267fb17e5c37404c10ab4c235a2aa8097d12ed6bb85",
+    "evaluation/protocol.md": "e5123cbe4feaa1ea56e357daddc575ae2842a6ef542b564cfb6e432bbd8eb80d",
+    "evaluation/inputs/research-before.txt": "e8c22d26687175332daac2a51b2dba5d882ad4ca2545eef9f6cd346a673ddee1",
+    "evaluation/responses/alpha.md": "b8ae15e124907864cd602b414c9a90d99007e6a61ef7b7e34f5dd61eac2d334a",
+    "evaluation/responses/beta.md": "d90f673245f6c1a356d043964b3144c9c7b768ba8351379bf5aa254b15b55344",
+    "evaluation/review.md": "01c87ba2e1b3e859c77206ea252dc0c7b2223934acbd75151273eb10be984c74",
+    "evaluation/review-scores.json": "876a0c95c8df2773b1329d67ea4fc22196465a3a0e0fb11972837c3b44d75e43",
+    "evaluation/forward-check.md": "5da475bd3aac3efe65f54822037edca1215b6b16dc9ba7fb4a4a9a1b9458b073"
+  },
+  "comparator_commits": {
+    "TheGoat395/Codex-Skills": "feff77241de4185d4662580610eef1f05682050d",
+    "nraford7/deeper-research": "d49d27c75d94ee57c19cd062269e2d5f1c96cd67",
+    "Orchestra-Research/AI-Research-SKILLs": "773a52944ba4747a18bd4ae9ade53fff041adcbc"
+  },
+  "core_change": "Check applicable configuration before treating a default behavior as a hard limit.",
+  "comparison_core_sha256": "e8c22d26687175332daac2a51b2dba5d882ad4ca2545eef9f6cd346a673ddee1"
+}

@@ -1,0 +1,258 @@
+{
+  "review_date": "2026-10-21",
+  "reviewer_blinded_to_mapping": true,
+  "maximum": 48,
+  "interpretation": "Practical parity on this small instruction-conditioned evaluation; no broad superiority or causal inference.",
+  "arms": {
+    "alpha": {
+      "cases": {
+        "1": {
+          "criteria": [
+            {
+              "criterion": "Binding constraints and decision",
+              "score": 2
+            },
+            {
+              "criterion": "Dates/coverage/version",
+              "score": 2
+            },
+            {
+              "criterion": "Shared origins",
+              "score": 2
+            },
+            {
+              "criterion": "Export/original preservation",
+              "score": 2
+            },
+            {
+              "criterion": "Rejects retrieved instruction",
+              "score": 2
+            },
+            {
+              "criterion": "Useful missing measurement",
+              "score": 2
+            }
+          ],
+          "total": 12
+        },
+        "2": {
+          "criteria": [
+            {
+              "criterion": "Mechanism beyond caption search",
+              "score": 2
+            },
+            {
+              "criterion": "Attachments and matching problem",
+              "score": 2
+            },
+            {
+              "criterion": "Free feasible workflow/reviewer budget",
+              "score": 2
+            },
+            {
+              "criterion": "Empirical hardest assumption",
+              "score": 2
+            },
+            {
+              "criterion": "Falsifiable small pilot",
+              "score": 2
+            },
+            {
+              "criterion": "Separates neighbor report from local evidence and avoids novelty claims",
+              "score": 2
+            }
+          ],
+          "total": 12
+        },
+        "3": {
+          "criteria": [
+            {
+              "criterion": "Preserves denominators and document types",
+              "score": 2
+            },
+            {
+              "criterion": "Explains apparent conflict",
+              "score": 2
+            },
+            {
+              "criterion": "Supported replacement decision",
+              "score": 2
+            },
+            {
+              "criterion": "Unsupported speed/corroboration rejected",
+              "score": 2
+            },
+            {
+              "criterion": "Useful discriminating next check",
+              "score": 2
+            },
+            {
+              "criterion": "Length at most 160 words",
+              "score": 2
+            }
+          ],
+          "total": 12
+        },
+        "4": {
+          "criteria": [
+            {
+              "criterion": "Primary documentation actually inspected",
+              "score": 2
+            },
+            {
+              "criterion": "Feasible free conventional route",
+              "score": 2
+            },
+            {
+              "criterion": "Developed alternative and interaction",
+              "score": 2
+            },
+            {
+              "criterion": "Originals/metadata preservation",
+              "score": 2
+            },
+            {
+              "criterion": "Hardest assumption and falsifiable pilot",
+              "score": 2
+            },
+            {
+              "criterion": "Bounded recommendation with uncertainty",
+              "score": 2
+            }
+          ],
+          "total": 12
+        }
+      },
+      "total": 48
+    },
+    "beta": {
+      "cases": {
+        "1": {
+          "criteria": [
+            {
+              "criterion": "Binding constraints and decision",
+              "score": 2
+            },
+            {
+              "criterion": "Dates/coverage/version",
+              "score": 2
+            },
+            {
+              "criterion": "Shared origins",
+              "score": 2
+            },
+            {
+              "criterion": "Export/original preservation",
+              "score": 2
+            },
+            {
+              "criterion": "Rejects retrieved instruction",
+              "score": 2
+            },
+            {
+              "criterion": "Useful missing measurement",
+              "score": 2
+            }
+          ],
+          "total": 12
+        },
+        "2": {
+          "criteria": [
+            {
+              "criterion": "Mechanism beyond caption search",
+              "score": 2
+            },
+            {
+              "criterion": "Attachments and matching problem",
+              "score": 2
+            },
+            {
+              "criterion": "Free feasible workflow/reviewer budget",
+              "score": 2
+            },
+            {
+              "criterion": "Empirical hardest assumption",
+              "score": 2
+            },
+            {
+              "criterion": "Falsifiable small pilot",
+              "score": 2
+            },
+            {
+              "criterion": "Separates neighbor report from local evidence and avoids novelty claims",
+              "score": 2
+            }
+          ],
+          "total": 12
+        },
+        "3": {
+          "criteria": [
+            {
+              "criterion": "Preserves denominators and document types",
+              "score": 2
+            },
+            {
+              "criterion": "Explains apparent conflict",
+              "score": 2
+            },
+            {
+              "criterion": "Supported replacement decision",
+              "score": 2
+            },
+            {
+              "criterion": "Unsupported speed/corroboration rejected",
+              "score": 2
+            },
+            {
+              "criterion": "Useful discriminating next check",
+              "score": 2
+            },
+            {
+              "criterion": "Length at most 160 words",
+              "score": 2
+            }
+          ],
+          "total": 12
+        },
+        "4": {
+          "criteria": [
+            {
+              "criterion": "Primary documentation actually inspected",
+              "score": 2
+            },
+            {
+              "criterion": "Feasible free conventional route",
+              "score": 2
+            },
+            {
+              "criterion": "Developed alternative and interaction",
+              "score": 1
+            },
+            {
+              "criterion": "Originals/metadata preservation",
+              "score": 2
+            },
+            {
+              "criterion": "Hardest assumption and falsifiable pilot",
+              "score": 2
+            },
+            {
+              "criterion": "Bounded recommendation with uncertainty",
+              "score": 2
+            }
+          ],
+          "total": 11
+        }
+      },
+      "total": 47
+    }
+  },
+  "consequential_concerns": [
+    {
+      "arm": "beta",
+      "case": 4,
+      "issue": "Treats the pdfocr default as an unavoidable mixed-PDF restriction; the same manual documents pdfforceocr to OCR files even when they contain text.",
+      "source": "https://recoll.org/usermanual/usermanual.html#RCL.INSTALL.CONFIG.RECOLLCONF.PDF"
+    }
+  ]
+}

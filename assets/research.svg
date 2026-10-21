@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img" aria-labelledby="title desc">
+  <title id="title">Research</title>
+  <desc id="desc">Follow the question. Inspect the evidence. Find a useful way forward.</desc>
+  <rect width="1280" height="400" rx="24" fill="#101d2a"/>
+  <g fill="none" stroke="#253e50" stroke-width="1">
+    <path d="M760 0v400m80-400v400m80-400v400m80-400v400m80-400v400m80-400v400M720 80h560M720 160h560M720 240h560M720 320h560"/>
+  </g>
+  <text x="64" y="78" fill="#8ce7d0" font-family="ui-monospace,monospace" font-size="16" letter-spacing="3">A CODEX SKILL</text>
+  <text x="60" y="176" fill="#f2f6f8" font-family="system-ui,sans-serif" font-size="80" font-weight="700" letter-spacing="-3">Research</text>
+  <text x="64" y="232" fill="#c5d4df" font-family="system-ui,sans-serif" font-size="25">Follow the question. Inspect the evidence.</text>
+  <text x="64" y="269" fill="#c5d4df" font-family="system-ui,sans-serif" font-size="25">Find a useful way forward.</text>
+  <text x="64" y="345" fill="#829aaa" font-family="ui-monospace,monospace" font-size="16">Independent discovery · Grounded decisions</text>
+  <g stroke="#8ce7d0" stroke-width="3" fill="none">
+    <path d="M850 206l100-86 120 80-120 90-100-84m100-86v170m0-170 170-40m-50 120 50-120m-50 120 60 110m-180-20 180 20" opacity=".7"/>
+    <circle cx="850" cy="206" r="19" fill="#101d2a"/>
+    <circle cx="950" cy="120" r="15" fill="#101d2a"/>
+    <circle cx="950" cy="290" r="15" fill="#101d2a"/>
+    <circle cx="1120" cy="80" r="10" fill="#101d2a"/>
+    <circle cx="1130" cy="310" r="10" fill="#101d2a"/>
+    <circle cx="1070" cy="200" r="28" fill="#8ce7d0"/>
+  </g>
+  <path d="m1058 200 9 9 16-19" stroke="#101d2a" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
