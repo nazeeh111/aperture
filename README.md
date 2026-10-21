@@ -77,7 +77,7 @@ Repeat `--path` for additional files. The destination must be new and its parent
 ## Develop
 
 ```sh
-python3 -W error::ResourceWarning -m unittest discover -s tests -v
+PYTHONDONTWRITEBYTECODE=1 python3 -W error::ResourceWarning -m unittest discover -s tests -v
 ```
 
 No paid evaluation service is needed. See [the evaluation protocol](evaluation/protocol.md) to repeat the behavioral cases with your own agent and tools. CI runs offline code/package checks; it does not rerun model evaluations.

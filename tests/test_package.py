@@ -34,9 +34,13 @@ class PackageTests(unittest.TestCase):
                 if key.rsplit("}", 1)[-1] in ("href", "src"):
                     self.assertTrue(value.startswith("#"))
 
-    def test_distributable_contains_no_symlinks_or_local_home_paths(self):
+    def test_source_files_contain_no_symlinks_or_local_home_paths(self):
         for folder in (ROOT / "research", ROOT / "docs", ROOT / "evaluation"):
             for path in folder.rglob("*"):
+                # Python may create bytecode while running this very suite.
+                # Generated caches are excluded from Git and release archives.
+                if "__pycache__" in path.parts:
+                    continue
                 with self.subTest(path=str(path.relative_to(ROOT))):
                     self.assertFalse(path.is_symlink())
                     if path.is_file():
