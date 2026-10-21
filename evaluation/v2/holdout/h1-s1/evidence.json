@@ -1,0 +1,113 @@
+{
+  "clock_start_utc": "2026-10-21 05:27:30 UTC",
+  "clock_end_utc": "2026-10-21 05:29:55 UTC",
+  "clock_exclusions": [
+    "Initial tool call read the assigned skill and brief before the start clock; that initial file-read time is excluded.",
+    "Final file serialization/write and final notification are excluded."
+  ],
+  "decisive_sources": [
+    {
+      "url": "https://docs.openaq.org/using-the-api/api-key",
+      "location": "Managing Your API Key; Using Your API Key",
+      "supports": "Account-issued key required for current OpenAQ API"
+    },
+    {
+      "url": "https://open-meteo.com/en/docs/air-quality-api",
+      "location": "Data Sources table",
+      "supports": "CAMS model sources and global spatial/temporal coverage, not direct regulatory site measurements"
+    },
+    {
+      "url": "https://www.epa.gov/outdoor-air-quality-data/what-best-way-access-outdoor-air-monitoring-data",
+      "location": "By Access Method",
+      "supports": "AQS API requires signup key; public reports and downloadable files alternative"
+    },
+    {
+      "url": "https://www.epa.gov/outdoor-air-quality-data/download-daily-data",
+      "location": "Browser form and results; PM2.5, 2023, Illinois, Monitor Site 170310001, Get Data",
+      "supports": "Direct observation: no login; generated expiring CSV link, not downloaded"
+    },
+    {
+      "url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_server=134.67.99.91&_port=4085&_sessionid=ApzrlAUOT52&_PROGRAM=dataprog.ad_viz_plotval_getdata.sas",
+      "location": "Generated 2023 Download CSV link",
+      "supports": "Observed link only, not successful acquisition"
+    },
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/download_files.html?monitor=25-025-1004",
+      "location": "2023 and 2024 daily summary data rows",
+      "supports": "National PM2.5 88101 ZIP sizes exceed file limit"
+    },
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/FileFormats.html",
+      "location": "Sections 5.1-5.2, web lines 224-274",
+      "supports": "Real schema, POC, daily local-standard-day definition and multiple representations"
+    },
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/Data_Advisory_PM25_88101_Pregen_Files.pdf",
+      "location": "Recommended Data Usage and method-code table",
+      "supports": "Use corrected/updated T640/T640X, exclude 236/238 originals"
+    },
+    {
+      "url": "https://www.epa.gov/outdoor-air-quality-data",
+      "location": "AirData replacement announcement, last updated Oct7 2026",
+      "supports": "New app exists; legacy retirement banner says Dec18 without year in retrieved text"
+    }
+  ],
+  "access_errors": [
+    {
+      "tool": "exec_command python urllib",
+      "url": "https://www.epa.gov/outdoor-air-quality-data/download-daily-data",
+      "error": "URLError: [Errno 8] nodename nor servname provided, or not known; no bytes downloaded"
+    },
+    {
+      "tool": "web open",
+      "url": "https://rconnect-public.epa.gov/airdata/",
+      "error": "not accessible via this tool"
+    },
+    {
+      "tool": "web open",
+      "url": "https://rconnect-public.epa.gov/AirData/",
+      "error": "not accessible via this tool"
+    },
+    {
+      "tool": "web open",
+      "url": "generated 2023 broker URL listed above",
+      "error": "not accessible via this tool"
+    },
+    {
+      "tool": "cua browser",
+      "url": "https://www.epa.gov/outdoor-air-quality-data/download-daily-data",
+      "error": "After 2024 then Illinois selections, Monitor Site select contained SAS error message: This request completed with errors. Selector deadline exceeded; Cook county follow-up did not populate site list at observation."
+    },
+    {
+      "tool": "functions exec",
+      "error": "One malformed JavaScript search call had SyntaxError; corrected before research continued."
+    }
+  ],
+  "artifacts": [
+    "answer.md",
+    "evidence.json"
+  ],
+  "verification": {
+    "measurement_downloads": 0,
+    "files_downloaded_over_limit": 0,
+    "schema": "official documentation, selected real field names",
+    "2023_export_link_generated": true,
+    "2024_export_verified": false,
+    "actual_export_header_verified": false,
+    "site_regulatory_metadata_verified": false,
+    "comparison_computed": false,
+    "size_guard_executed": false
+  },
+  "unavailable_telemetry": [
+    "Exact model token usage and cost",
+    "Web backend transfer byte counts",
+    "Browser underlying response sizes",
+    "Successful CSV byte count, checksum and row count"
+  ],
+  "limitations": [
+    "No archived measurement record; brief permits a schema example instead.",
+    "Plan is source-supported but full two-year acquisition not demonstrated.",
+    "No other optional skills, local histories, accounts, credentials, installs or remote writes used.",
+    "Only the two named deliverable files were intentionally written; browser infrastructure may manage its own transient state."
+  ]
+}

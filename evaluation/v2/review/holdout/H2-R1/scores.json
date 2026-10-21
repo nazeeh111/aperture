@@ -1,0 +1,64 @@
+{
+  "pair": "H2-R1",
+  "scores": {
+    "amber": {
+      "dimensions": [
+        4,
+        4,
+        3,
+        3,
+        3,
+        3
+      ],
+      "total": 20,
+      "consequential_errors": [
+        "Latest-only release state silently misses a new stable maintenance release on an older branch; reproduced with controlled fixture."
+      ]
+    },
+    "teal": {
+      "dimensions": [
+        4,
+        4,
+        3,
+        3,
+        4,
+        4
+      ],
+      "total": 22,
+      "consequential_errors": [
+        "Primary automated sources omit current upstream-only advisories such as GHSA-78g4-xqwv-q3g8; the reviewed-coverage caveat is honest, but no upstream fallback is included."
+      ]
+    }
+  },
+  "preference": "teal_slight",
+  "checked_advantages": {
+    "amber": [
+      {
+        "benefit": "Explicit periodic upstream-advisory supplement addresses reviewed-database lag",
+        "source": "https://github.com/python-pillow/Pillow/security/advisories/GHSA-78g4-xqwv-q3g8",
+        "location": "amber advisory recommendation; independently read published upstream record absent from global query",
+        "why_material": "Manual upstream inspection can find a real current advisory missing from the shared automated global source. Amber suggests the route but does not automate it."
+      }
+    ],
+    "teal": [
+      {
+        "benefit": "Tracks all stable release versions instead of maximum only",
+        "source": "https://docs.pypi.org/api/index-api/",
+        "location": "teal filename loop and versions set; reviewer fixture 11.3.1 added below 12.0.0",
+        "why_material": "Teal reports the older-branch patch; amber prints No change, a practical missed-update difference."
+      },
+      {
+        "benefit": "Checks known advisories for the actual deployed version",
+        "source": "https://pypi.org/pypi/Pillow/9.0.0/json",
+        "location": "teal deployed-version request and active vulnerability output",
+        "why_material": "Independent anonymous retrieval found 49 vulnerability records; live pilot displays version-specific advisory IDs, reducing manual range matching."
+      }
+    ]
+  },
+  "verification_limits": [
+    "No daily scheduler or notification delivery was established, as required by the no-new-jobs constraint.",
+    "Neither complete script implements all recommended production retry/backoff/staleness handling; neither is a claim of exhaustive security coverage.",
+    "Live responses establish endpoint availability and pilot operation at review time; advisory publication can lag and dynamic data can change.",
+    "Blinding limit: while inspecting the permitted H1-R2 teal evidence.json, I encountered its candidate-path field. The review therefore was not fully blind. I did not open that path, an arm map, other folders, skills, histories or parent hypotheses. This affects all subsequent scoring in this reviewer batch. A sanitized independent crosscheck is appropriate."
+  ]
+}

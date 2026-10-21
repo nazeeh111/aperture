@@ -1,0 +1,103 @@
+{
+  "review_type": "fresh blinded crosscheck",
+  "review_date": "2026-10-21",
+  "blinding": {
+    "prior_reviews_read": false,
+    "arm_map_read": false,
+    "skill_read": false,
+    "task_history_read": false,
+    "residual_concerns": [
+      "Parent dispatch disclosed that an earlier reviewer saw execution-context metadata, but no previous preference or arm mapping was supplied.",
+      "Sanitization placeholders remain visible; neither placeholder identifies an arm. Evidence differs in structure and detail, which may permit stylistic inference; no identity inference used."
+    ],
+    "exact_model_telemetry": "unavailable"
+  },
+  "critical_failure_pattern": false,
+  "pair": "H2-R2",
+  "preference": "amber materially better",
+  "material_win": true,
+  "scores": {
+    "amber": {
+      "factual_claim_support": 4,
+      "constraints_feasibility": 4,
+      "breadth_material_alternative": 3,
+      "decisive_source_inspection": 4,
+      "artifact_actionability": 4,
+      "falsifiable_verification_uncertainty": 4
+    },
+    "teal": {
+      "factual_claim_support": 3,
+      "constraints_feasibility": 4,
+      "breadth_material_alternative": 3,
+      "decisive_source_inspection": 3,
+      "artifact_actionability": 2,
+      "falsifiable_verification_uncertainty": 4
+    }
+  },
+  "totals": {
+    "amber": 23,
+    "teal": 19
+  },
+  "reason": "Amber provides a working stateful manual watcher rather than a snapshot needing manual diff implementation. Its complete release set detects a new stable maintenance release below the greatest version, a counterexample the teal maximum-only implementation misses. These benefits were independently exercised with the actual answer code and no network or filesystem writes.",
+  "independently_checked_benefits": [
+    {
+      "arm": "amber",
+      "benefit": "First-run baseline, unchanged repeat, local change detection and preservation of state on collection failure work in actual main() with an in-memory filesystem substitute.",
+      "material": true,
+      "verification": "Extracted Python block, compiled/executed in memory. Injected deterministic collect() and FakePath/FakeOS. First two main() calls returned 0; baseline printed once and OK twice. Injected collection exception returned 1 and preserved byte-equivalent virtual state."
+    },
+    {
+      "arm": "amber",
+      "benefit": "Detects an added stable lower-branch release that a latest-only snapshot misses.",
+      "material": true,
+      "verification": "Mock PyPI files included 12.0.0 and 11.3.1 stable, a 13.0.0rc1 prerelease and yanked 10.0.0. Actual collect() retained exactly both eligible stable versions and an advisory across two pages. Adding 11.3.2 to the collected baseline printed REVIEW release:11.3.2. Actual teal stable() still returns 12.0.0. Synthetic failure-case check, not a claim of a currently missed real Pillow release."
+    },
+    {
+      "arm": "amber",
+      "benefit": "Uses the recommended Index API instead of the deprecated project JSON releases key.",
+      "material": false,
+      "source": "https://docs.pypi.org/api/json/",
+      "location": "lines 115-123: releases deprecated and may be removed; Index API recommended"
+    },
+    {
+      "arm": "teal",
+      "benefit": "Package-wide GitHub reviewed query can cover advisories outside upstream repository. Broader documented source scope than amber implemented pilot.",
+      "material": false,
+      "source": "https://docs.github.com/en/rest/security-advisories/global-advisories",
+      "location": "lines 20-46: public global endpoint, ecosystem and affects filters",
+      "qualification": "No particular additional Pillow advisory independently demonstrated; amber describes OSV package coverage as extension."
+    }
+  ],
+  "factual_errors": [
+    {
+      "arm": "teal",
+      "severity": "minor maintenance risk",
+      "issue": "Uses package[releases] without mentioning that this PyPI JSON key is deprecated. It still exists, so not a present live failure."
+    }
+  ],
+  "limitations": [
+    "Neither live end-to-end watcher was reproduced; terminal DNS unavailable.",
+    "Amber pilot covers upstream repository advisories, not package-wide OSV/global aggregation; this is explicitly disclosed.",
+    "Teal honestly labels baseline storage and deduplication as future work, but the requested watcher is less complete.",
+    "Both use a deliberately restricted numeric Pillow version convention.",
+    "Simulated tests establish defined failure cases and code behavior, not complete real-world service reliability."
+  ],
+  "source_checks": [
+    {
+      "url": "https://docs.pypi.org/api/json/",
+      "result": "Confirmed endpoint, releases data and deprecation, recommendation to use Index API."
+    },
+    {
+      "url": "https://docs.pypi.org/api/index-api/",
+      "result": "Confirmed JSON media type and files metadata including filename and yanked."
+    },
+    {
+      "url": "https://docs.github.com/en/rest/security-advisories/global-advisories",
+      "result": "Confirmed unauthenticated public access, pip ecosystem, affects package/version, per_page pagination and updated/withdrawn metadata."
+    },
+    {
+      "url": "https://docs.github.com/en/rest/security-advisories/repository-advisories",
+      "result": "Opened primary repository advisory endpoint documentation; separate endpoint from releases."
+    }
+  ]
+}

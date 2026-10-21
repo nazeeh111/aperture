@@ -1,0 +1,132 @@
+{
+  "clock_start_utc": "2026-10-21 05:40:13 UTC",
+  "clock_end_utc": "2026-10-21 05:42:36 UTC",
+  "timing_exclusions": [
+    "Final artifact serialization and writes",
+    "Final response delivery",
+    "No timing or usage inferred for upstream web indexing"
+  ],
+  "input_locations": [
+    "[task workspace]/candidate/research/SKILL.md",
+    "[task workspace]/holdout/H4.md"
+  ],
+  "decisive_evidence": [
+    {
+      "url": "https://help.openalex.org/api/authentication/",
+      "location": "lines 26-28, 98-106, 126",
+      "supports": "Basic keyless queries; cursor restriction; page and result limits; October 15 2026 documentation date",
+      "kind": "official documentation observed via web"
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
+      "location": "lines 153-168, 228-237 and relationship filters",
+      "supports": "Index dates include external changes; updates and relationship filters",
+      "kind": "official documentation observed via web"
+    },
+    {
+      "url": "https://www.osti.gov/api/v1/docs",
+      "location": "Search-index excerpt: Record List Query Parameters; introduction",
+      "supports": "DOE research repository, GET API, q and entry-date/page parameters",
+      "kind": "official documentation search excerpt; direct open timed out"
+    },
+    {
+      "url": "https://help.openalex.org/data/works/dois/",
+      "location": "Multiple DOIs; Finding a work by any of its DOIs; When a DOI belongs somewhere else",
+      "supports": "Multiple DOI locations and possible merge errors",
+      "kind": "official documentation search result"
+    },
+    {
+      "url": "https://crossref.org/documentation/register-maintain-records/maintaining-your-metadata/registering-updates/",
+      "location": "Registering updates introductory example",
+      "supports": "Separate notice DOI, notice updates target, original updated_by",
+      "kind": "official documentation search result"
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/retraction-watch/",
+      "location": "lines 115-130",
+      "supports": "Working-day refresh, corrections and concern coverage weaker than retractions, production API update-to/source fields",
+      "kind": "official documentation observed via web"
+    },
+    {
+      "url": "https://www.nature.com/articles/s43247-024-01384-w",
+      "location": "lines 19, 41-44, 139-147",
+      "supports": "Real DAC correction, target DOI, revised estimate, unchanged SE, April18 2024 date",
+      "kind": "publisher HTML observed via web"
+    },
+    {
+      "url": "https://scholars.duke.edu/publication/1631642",
+      "location": "Publication Date and abstract",
+      "supports": "Secondary record lists December1 2024, conflicting with publisher date",
+      "kind": "university metadata search result"
+    }
+  ],
+  "access_errors": [
+    {
+      "tool": "exec_command Python urllib",
+      "urls": [
+        "https://api.crossref.org/v1/works/10.1016/j.apenergy.2022.119895",
+        "https://api.crossref.org/v1/works/10.1016/j.apenergy.2024.124866",
+        "https://api.openalex.org/works?search=%22direct+air+capture%22&filter=from_publication_date%3A2026-09-01%2Cto_publication_date%3A2026-09-30&per_page=5&select=id%2Cdoi%2Ctitle%2Cpublication_date%2Cis_retracted%2Clocations",
+        "https://www.osti.gov/api/v1/records?search=%22direct+air+capture%22&rows=2"
+      ],
+      "error": "All four: urlopen error Errno8 nodename nor servname provided, or not known; zero response bytes. OSTI exploratory request used unsupported search parameter; corrected to q in recommendation after docs inspection."
+    },
+    {
+      "tool": "web open",
+      "urls": [
+        "https://api.crossref.org/v1/works/10.1016/j.apenergy.2024.124866",
+        "https://api.crossref.org/v1/works/10.1016/j.apenergy.2022.119895",
+        "https://api.openalex.org/works?search=%22direct%20air%20capture%22&filter=from_publication_date:2026-09-01,to_publication_date:2026-09-30&per_page=5&select=id,doi,title,publication_date,is_retracted",
+        "https://pubs.rsc.org/en/content/articlehtml/2024/cc/d4cc90390k"
+      ],
+      "error": "URL not accessible via tool"
+    },
+    {
+      "tool": "web open",
+      "url": "https://www.osti.gov/api/v1/docs",
+      "error": "400 timeout fetching; repeated direct open failed; official indexed documentation available"
+    },
+    {
+      "tool": "web open",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0306261924022499",
+      "error": "403 Forbidden; indexed publisher excerpt available but not decisive final example"
+    },
+    {
+      "tool": "web open",
+      "url": "https://www.nature.com/articles/s43247-024-01384-w",
+      "error": "Redirected with cookies_not_supported parameter, but complete article HTML text was returned"
+    }
+  ],
+  "artifacts": [
+    "[task workspace]/holdout/h4-s2/answer.md",
+    "[task workspace]/holdout/h4-s2/evidence.json"
+  ],
+  "verification": {
+    "live_api_success": false,
+    "publisher_notice_read": true,
+    "script_or_scheduler_implemented": false,
+    "installs": false,
+    "accounts": false,
+    "remote_writes": false,
+    "credential_access": false,
+    "local_download_files": 0,
+    "request_size_cap": "Python attempted reads capped at 1048577 bytes with discard if over 1048576; no request succeeded",
+    "schema": "Manually transcribed publisher evidence, not API metadata",
+    "prose_words_excluding_compact_example": 541
+  },
+  "unavailable_telemetry": [
+    "Model token consumption",
+    "Monetary cost",
+    "Web tool per-resource byte counts, cache age and upstream fetch timings",
+    "Successful API response byte sizes and API budget headers",
+    "End-to-end monthly workflow execution/recall measurements"
+  ],
+  "limitations": [
+    "No guarantee of complete literature or correction coverage",
+    "No live API behavior replicated",
+    "No full-text scientific appraisal of example original paper",
+    "No downloaded PDFs or bulk CSV",
+    "Web tool source-size telemetry unavailable; no remote files saved locally",
+    "Recommended family matching and human review are proposals, not implemented results"
+  ]
+}

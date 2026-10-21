@@ -1,0 +1,10 @@
+{
+  "reason": "Reviewer and root reproduced complementary advisory gaps in both directions. Narrow post-benchmark repair allowed by frozen exception for concrete defects.",
+  "changes": [
+    "Coverage-critical counterexample check in core",
+    "UI display name Aperture Research; invocation and discovery policy unchanged"
+  ],
+  "comparison_core_sha256": "5e2490052be7e761113f8045f2f52e737a032f69c4a661f19a6446cec0432de7",
+  "final_core_sha256": "719b08c2961f53d22814ea886f4acfc140d9551f4468fbd66dad986e23db8595",
+  "requires_targeted_probe": true
+}

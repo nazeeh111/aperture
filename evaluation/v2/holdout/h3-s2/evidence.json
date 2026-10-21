@@ -1,0 +1,128 @@
+{
+  "task": "H3",
+  "candidate": "research skill supplied by parent",
+  "run": "h3-s2",
+  "start_utc": "2026-10-21 05:37:16 UTC",
+  "decisive_sources": [
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000170738",
+      "location": "Search by taxon establishment means; Search by geoprivacy; Search for mappable/unmappable observations",
+      "supports": "native=true differs from introduced=false; two geoprivacy settings; mappable does not imply walk-scale accuracy",
+      "type": "official documentation read"
+    },
+    {
+      "url": "https://github.com/inaturalist/iNaturalistAPI/blob/main/lib/views/_observation_search_params_v1.yml.ejs",
+      "location": "source parameter references, displayed lines 446-604",
+      "supports": "v1 photos, native, license, geoprivacy, date and radius parameter availability",
+      "type": "current main branch documentation source; not pinned"
+    },
+    {
+      "url": "https://github.com/inaturalist/iNaturalistAPI/blob/main/lib/views/swagger_v1.yml.ejs",
+      "location": "/observations GET displayed lines 3954-3995",
+      "supports": "v1 search returns metadata and observation array; pagination guidance",
+      "type": "official source read"
+    },
+    {
+      "url": "https://www.inaturalist.org/pages/api%2Brecommended%2Bpractices",
+      "location": "maximum per_page 200; bulk retrieval recommendations",
+      "supports": "200-record pagination and small bounded read approach",
+      "type": "official documentation search result"
+    },
+    {
+      "url": "https://www.inaturalist.org/pages/developers",
+      "location": "Rate Limits and Datasets",
+      "supports": "API availability and licensed research-grade data",
+      "type": "official documentation search result"
+    },
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000169938-what-is-geoprivacy-what-does-it-mean-for-an-observation-to-be-obscured-",
+      "location": "mechanics of restricted geographic information",
+      "supports": "obscured locations are displaced; no sensitive-coordinate reconstruction",
+      "type": "official documentation search result"
+    },
+    {
+      "url": "https://techdocs.gbif.org/en/openapi/images",
+      "location": "Occurrence image API introductory licence paragraph",
+      "supports": "observation images may have separate more restrictive licences",
+      "type": "official documentation search result"
+    },
+    {
+      "url": "https://www.inaturalist.org/api",
+      "location": "GET /observations -> Example -> Response; displayed lines 123-143",
+      "supports": "documented response example id 2281 gray wolf, casual, positional_accuracy 354, coordinates_obscured false; older API and not a bee",
+      "type": "official documented example; not live observation response"
+    },
+    {
+      "url": "https://docs.qgis.org/3.44/en/docs/user_manual/managing_data_source/opening_data.html",
+      "location": "delimited text import",
+      "supports": "local CSV point import",
+      "type": "official documentation search result"
+    },
+    {
+      "url": "https://doc.qgis.org/3.44/en/docs/user_manual/print_layout/create_output.html",
+      "location": "Export as PDF",
+      "supports": "downloadable local PDF route",
+      "type": "official documentation search result"
+    },
+    {
+      "url": "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+      "location": "occurrence download description in search; open returned navigation only",
+      "supports": "GBIF asynchronous emailed download alternative, limited accessible detail",
+      "type": "official documentation search result"
+    }
+  ],
+  "access_errors": [
+    {
+      "url": "https://api.inaturalist.org/v1/docs/",
+      "tool": "web.open",
+      "error": "returned zero document lines; no usable endpoint docs"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/observations?taxon_name=Anthophila&lat=37.2296&lng=-80.4139&radius=20&photos=true&quality_grade=research&native=true&geoprivacy=open&taxon_geoprivacy=open&per_page=1",
+      "tool": "web.open",
+      "error": "URL is not accessible via this tool"
+    },
+    {
+      "url": "https://api.inaturalist.org/v1/observations?taxon_name=Anthophila&lat=37.2296&lng=-80.4139&radius=20&photos=true&quality_grade=research&native=true&geoprivacy=open&taxon_geoprivacy=open&per_page=1",
+      "tool": "exec_command Python urllib",
+      "error": "URLError [Errno 8] nodename nor servname provided, or not known"
+    },
+    {
+      "url": "https://api.gbif.org/v1/occurrence/search?scientificName=Bombus%20impatiens&decimalLatitude=37.1,37.4&decimalLongitude=-80.6,-80.2&mediaType=StillImage&limit=1",
+      "tool": "web.open",
+      "error": "URL is not accessible via this tool"
+    },
+    {
+      "url": "https://www.inaturalist.org/observations?taxon_name=Anthophila&lat=37.2296&lng=-80.4139&radius=20&photos=true&native=true",
+      "tool": "web.open",
+      "error": "URL is not accessible via this tool"
+    }
+  ],
+  "artifacts": [
+    "answer.md",
+    "evidence.json"
+  ],
+  "checks": {
+    "live_bee_records": "unavailable",
+    "map_export": "not executed",
+    "code_example": "not executed or runtime-tested",
+    "native_status_completeness": "unverified",
+    "real_record": "no local bee record claimed",
+    "documented_example": "official older API response inspected"
+  },
+  "unavailable_telemetry": [
+    "model internal token usage",
+    "billing or subscription usage",
+    "complete tool-side network timings",
+    "API HTTP status where web tool reported only inaccessible"
+  ],
+  "exclusions": [
+    "No other local files, memories, history, protocol or sibling outputs read.",
+    "No optional skills other than assigned candidate.",
+    "No delegation, credentials, accounts, paid APIs, installs, remote writes, uploads, observer contact, field-location access or sensitive-coordinate reconstruction.",
+    "End timestamp excludes final artifact write and final message.",
+    "No PDF, CSV, script file or raw response artifact produced; reproduction code is embedded only in answer.md."
+  ],
+  "end_utc": "2026-10-21 05:39:50 UTC",
+  "elapsed_seconds": 154
+}

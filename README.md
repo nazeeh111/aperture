@@ -1,68 +1,78 @@
-<p align="center"><img src="assets/research.svg" alt="Research: Follow the question. Inspect the evidence. Find a useful way forward." width="100%"></p>
+<p align="center"><img src="assets/research.svg" alt="Aperture. Go beyond the starting point. Find a next move the evidence supports." width="100%"></p>
 
-<p align="center"><a href="LICENSE">MIT licensed</a> · <a href="research/SKILL.md">Read the skill</a> · <a href="docs/evaluation.md">Tests &amp; evidence</a> · <a href="docs/comparison.md">Compare approaches</a></p>
+<p align="center"><a href="#install">Install</a> · <a href="#try-it">Try it</a> · <a href="research/SKILL.md">Read the skill</a> · <a href="docs/real-world-evaluation.md">Real-world evaluation</a> · <a href="docs/comparison.md">Compare approaches</a></p>
+<p align="center"><a href="https://github.com/nazeeh111/aperture/actions/workflows/check.yml"><img src="https://github.com/nazeeh111/aperture/actions/workflows/check.yml/badge.svg" alt="Offline code and package checks"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-12634C" alt="MIT license"></a></p>
 
-# Research
+# Aperture
 
-A compact Codex skill for questions where discovery and evidence could change the answer.
+A compact Codex skill for questions where **better discovery or stronger evidence could change what you do**.
 
-Research helps an agent look beyond the starting idea, inspect decisive originals, challenge apparent agreement, and turn findings into useful decisions or experiments. It gives direction without requiring a fixed research pipeline, source quota, model fleet or report template.
+Start with an idea, a link or an uncertain decision. Research guides the agent to find overlooked routes, inspect decisive originals, test the assumptions that matter and deliver something useful. It adapts to the question instead of prescribing a fixed research pipeline or a report template.
 
-**Use your existing Codex access and tools.** The core is a Markdown instruction file. It requires no API keys, Python packages or separate service. Web research still needs an available search/browser capability. The optional public GitHub snapshot helper uses Python's standard library.
+**Works with your existing Codex access.** The core needs no API keys, Python packages or separate service. Live investigation needs search/browser tools available in your host. It can work alone or complement other skills already in use.
 
 ## Install
 
-Clone the repository, then copy **only the `research` folder** into your personal skills directory:
+Clone the repository, then copy **only `research/`** into your personal skills directory:
 
 ```sh
-git clone https://github.com/nazeeh111/research-skill.git
+git clone https://github.com/nazeeh111/aperture.git
 mkdir -p "$HOME/.agents/skills"
 test ! -e "$HOME/.agents/skills/research" && \
-  cp -R research-skill/research "$HOME/.agents/skills/research"
+  cp -R aperture/research "$HOME/.agents/skills/research"
 ```
 
-If `research` already exists, the command leaves it alone. Compare and back up your existing version before updating. Start a new Codex session if it has not discovered the skill. For repository-scoped use, copy the same folder into `.agents/skills/` in your project. See [official Codex skill guidance](https://developers.openai.com/codex/skills/).
+The guarded copy leaves an existing installation alone. Back up and compare your version before updating. For a project installation, copy the same folder into `.agents/skills/` in that repository. Codex detects skill changes; restart it if the skill does not appear. [Official skill guidance](https://developers.openai.com/codex/skills/).
 
-## Use
+Prefer a download? Get the installable ZIP and SHA-256 checksum from the **[latest release](https://github.com/nazeeh111/aperture/releases/latest)**. Extract the `research` folder into your skills directory. The ZIP includes the MIT license.
 
-Invoke it as `$research`, or select Research from your client's skill picker. Clients may show slash-style shortcuts; the portable prompt form is `$research`.
+## Try it
+
+Invoke **`$research`**, select Aperture Research in your client's skill picker, or let Codex choose it for a substantial investigation. Client shortcuts vary; `$research` is the portable prompt form.
 
 ```text
-Use $research to investigate a free local archive for web articles and
-scanned PDFs. Inspect primary documentation, compare feasible routes,
-preserve originals, and design a pilot that could overturn the choice.
+Use $research to investigate this idea. Treat these links as starting
+points, find overlooked mechanisms, and tell me what evidence could
+change the decision. Deliver a route we can actually test.
 ```
 
-```text
-Use $research to challenge this proposal. Treat these links as starting
-points, find overlooked mechanisms, and tell me what evidence would
-change the decision.
-```
+Three natural starting points:
 
-Research can also be selected automatically for substantial investigation. Straightforward answers, routine implementation and self-contained creative work can stay direct. It works on its own and can complement other skills already in use; it does not require them.
-
-## What it changes
-
-| Situation | Research's direction |
+| Your question | A useful result |
 | --- | --- |
-| The prompt names a few examples | Follow their references and discover unfamiliar candidates. |
-| Several pages repeat one claim | Trace their shared origin before treating them as corroboration. |
-| A new article describes an old result | Separate publication date, observed period and artifact version. |
-| A feature sounds promising | Inspect the relevant code, method, figure or demonstration. |
-| A creative route looks unusual | Explain its mechanism, restore binding constraints and test the hardest assumption. |
-| Evidence is missing or access fails | Bound the conclusion and preserve useful actions and open questions. |
+| “Can we keep offline notes in sync without a paid service?” | A feasible platform route that separates synchronization, version history and independent recovery. |
+| “Is this dataset good enough for our comparison?” | Actual schema/record checks, applicable coverage and a defensible denominator. |
+| “Can this public collection supply reusable exhibit images?” | Item-level source/rights records with uncertainty attached to each artifact field. |
 
-These are instructions to the agent, not mechanically enforced guarantees. Results depend on the model, tools, source access and task.
+Keep straightforward answers, routine implementation and self-contained creative work direct. Research is for uncertainty worth investigating.
 
-## Evidence before claims
+## How it works
 
-The release includes a matched four-case comparison of the pre-refinement core against the same agent without optional skill instructions: three fictional evidence packets and one live technical investigation. It also includes offline tests, frozen grading criteria and both complete responses. Independent review found a source-interpretation error in the Research response; the final core adds a focused reminder to check configuration before declaring a blocker. Read [the evaluation](docs/evaluation.md) for the original scores, correction and limits. This small developer-built evaluation does **not** establish general superiority, universal reliability or a causal improvement in creativity.
+Start with the intended outcome. If consequential uncertainty is worth investigating, follow promising leads, inspect decisive sources, develop a supported move and verify the authorized result. Otherwise keep the work direct. New evidence can reopen the question at any point.
 
-The [comparison guide](docs/comparison.md) separately examines three public skills at fixed revisions. That is a source-based architecture comparison; their pipelines were not run.
+<p align="center"><img src="assets/research-flowchart.svg" alt="Aperture flowchart: keep direct work direct; otherwise investigate, develop a supported move, verify and deliver, revisiting investigation when evidence changes." width="100%"></p>
 
-## Optional source snapshots
+The flowchart illustrates one possible route. The core emphasizes a few consequential choices:
 
-When preserving exact public source bytes matters:
+- **Explore beyond the seeds.** Follow unfamiliar candidates, different mechanisms and substantive surprises.
+- **Check the claim that changes the decision.** Read the original location and its conditions; look for the strongest countercheck.
+- **Check feasibility together.** A default is not a hard limit, and features from incompatible environments do not establish a usable route.
+- **Keep uncertainty attached.** An inferred URL or unverified number must be marked where it appears, including in tables and files.
+- **Finish within authority.** Carry authorized work through relevant verification and delivery; preserve unresolved obligations.
+
+These are instructions to an agent, not mechanical guarantees. Model judgment, tool access and the quality of the available evidence still matter.
+
+## Evidence you can inspect
+
+The **[real-world evaluation](docs/real-world-evaluation.md)** found 5 Research preferences, 2 ties and 1 native preference across eight repeated pairs. It separates development cases from untouched comparison tasks, uses independent executions and blind review, and retains complete answers, adverse results, a reviewer-exposure issue and fresh crosscheck differences. The final coverage reminder was checked separately after the scored comparison. It evaluates useful decisions and source support, rather than rewarding longer reports or more citations.
+
+The **[first release evaluation](docs/evaluation.md)** remains available: native baseline 48/48 versus Research 47/48 on a small four-case rubric. Review found a missed Recoll setting; a focused reminder was added. That short follow-up did not establish comparative improvement. Historical results have not been overwritten by later tests.
+
+The **[public-skills comparison](docs/comparison.md)** separately examines three alternatives at fixed revisions. Their pipelines were not run. No single small evaluation establishes universal superiority, creativity or reliability.
+
+## Optional exact-source snapshots
+
+When selected public repository bytes need to accompany an investigation:
 
 ```sh
 python3 research/scripts/snapshot_github.py \
@@ -72,18 +82,20 @@ python3 research/scripts/snapshot_github.py \
   --out /absolute/path/to/new-snapshot
 ```
 
-Repeat `--path` for additional files. The destination must be new and its parent must exist. The helper records revision, source URLs, SHA-256 hashes and failures; it refuses redirects and stops at the first failure. Partial downloads remain available with their manifest. Exit codes: `0` complete, `1` failed/partial/refused, `2` invalid arguments, `130` interrupted. It does not resolve revisions, verify a Git blob independently, read sources, judge claims or grant redistribution rights. Disk failures may prevent a final manifest update.
+The helper uses Python's standard library. Repeat `--path` for additional files. Its fresh destination must have an existing parent. It retains revision, source URLs, SHA-256 hashes and partial failures, refuses redirects and stops at the first failure. It does not resolve revisions, independently verify Git blobs, read sources, judge claims or grant redistribution rights. See [helper details](docs/snapshots.md).
 
-## Develop
+## Develop and contribute
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 python3 -W error::ResourceWarning -m unittest discover -s tests -v
 ```
 
-No paid evaluation service is needed. See [the evaluation protocol](evaluation/protocol.md) to repeat the behavioral cases with your own agent and tools. CI runs offline code/package checks; it does not rerun model evaluations.
+Offline checks cover the helper and release integrity. CI does not run model comparisons. To reproduce behavioral comparisons, follow the published protocols in [evaluation/](evaluation/).
 
-Contributions should fix an observed problem or improve a realistic task. Include the input, actual result, expected behavior and the smallest useful check. Keep private inputs and credentials out of issues. Avoid adding mandatory stages or dependencies without evidence that they earn their cost.
+Propose a change with a realistic input, actual outcome, expected improvement and the smallest useful check. Keep private inputs and credentials out of issues. Add instructions or dependencies only when their contribution earns their cost.
 
-## License
+## Presentation and license
 
-[MIT](LICENSE). Written and maintained by [Nazeeh Abdul-Hadi](https://github.com/nazeeh111). Public comparison sources remain owned and licensed by their respective authors; their source files are not bundled here.
+Original editable SVG figures use the **[PaperBanana for Codex skill](docs/presentation.md)** for planning, styling, local rendering and visual critique. The upstream API-backed generation pipeline was not run. No separately billed image or model API was used.
+
+[MIT licensed](LICENSE). Maintained by [Nazeeh Abdul-Hadi](https://github.com/nazeeh111). Compared projects and referenced collections retain their own ownership and licenses.

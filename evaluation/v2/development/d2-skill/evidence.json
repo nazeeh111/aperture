@@ -1,0 +1,30 @@
+{
+  "clock_start_utc": "2026-10-21 05:21:32 UTC",
+  "clock_end_utc": "2026-10-21 05:22:19 UTC",
+  "clock_end_scope": "Last observed clock before artifact composition; excludes final write duration.",
+  "telemetry": "Token, cost, and exhaustive tool-trace telemetry unavailable. This is a selected evidence record, not a complete tool trace.",
+  "verification_scope": "Current primary documentation and public repository release pages inspected through native web tools. No installs, device pairing, user data access, accounts, remote writes, or runtime recovery tests.",
+  "primary_sources_opened": [
+    {"url":"https://docs.syncthing.net/users/versioning.html","decisive_location":"Lines 2-13: default disabled, per-device settings, incoming changes only, Simple retention; lines 16-41: staggered pruning."},
+    {"url":"https://docs.syncthing.net/users/syncing.html","decisive_location":"Lines 20-23: concurrent changes, conflict naming and propagation; lines 24-26: case-sensitivity restrictions."},
+    {"url":"https://github.com/researchxxl/syncthing-android/releases","decisive_location":"Lines 150-189: rc.4 prerelease, October 14; lines 214-264: latest stable 2.1.6.0, October 6, storage/local-network permission updates."},
+    {"url":"https://github.com/syncthing/syncthing-android","decisive_location":"Line 115: archived December 3 2024; lines 224-226: discontinued, final December 2024 release."},
+    {"url":"https://publish.obsidian.md/git-doc/Getting%20Started","decisive_location":"Lines 0-1: initialize local repository and optional remote; lines 5-8: mobile instability, no SSH/rebase/submodules, memory limitations and clone/pull crashes."},
+    {"url":"https://github.com/localsend/localsend","decisive_location":"Lines 234-255: free local transfer without third-party servers; lines 285-302: Android 7, macOS 11, port 53317 TCP/UDP, firewall and AP isolation."},
+    {"url":"https://docs.syncthing.net/intro/getting-started.html","decisive_location":"Lines 5-10: community flavors and operating-system core binary; setup instructions inspected."},
+    {"url":"https://github.com/researchxxl/syncthing-android/wiki","decisive_location":"Redirected to repository root; README identifies community wrapper and distribution; no wiki content at this route."},
+    {"url":"https://docs.syncthing.net/users/faq.html","decisive_location":"Line 81: online-at-same-time exchange including deletions; lines 121-123: internal versions not synchronized; lines 286-288: sync is not ideal backup."},
+    {"url":"https://obsidian.md/help/android","decisive_location":"Lines 1-4: shared device storage, all-files permission, private app storage incompatible with Syncthing."},
+    {"url":"https://git-scm.com/docs/git-restore","decisive_location":"Lines 209-228: restore specified paths from an explicit source commit; lines 314-323: examples."},
+    {"url":"https://localsend.org/","decisive_location":"Lines 33-56: Android/macOS, no Internet, no accounts/login/servers; lines 58-67: transfer workflow and free/open source."},
+    {"url":"https://github.com/researchxxl/syncthing-android/tree/main/wiki","decisive_location":"Directory metadata visible, file listing absent in extracted view; prompted targeted search for battery guidance."},
+    {"url":"https://github.com/localsend/localsend/releases","decisive_location":"Release page opened, but returned extract was navigation-heavy; no specific latest-version assertion derived."},
+    {"url":"https://github.com/researchxxl/syncthing-android/blob/main/wiki/Info-on-battery-optimization-and-settings-affecting-battery-usage.md","decisive_location":"Lines 188-195: doze exemption and hourly mode's always-on-peer assumption; lines 206-212: faster synchronization battery tradeoff."}
+  ],
+  "access_failures": [
+    {"url":"https://publish.obsidian.md/git-doc/Getting+Started","result":"Not Found: plus encoded as literal filename. Correct space-encoded route subsequently opened."},
+    {"url":"https://github.com/researchxxl/syncthing-android/blob/main/wiki/Run-conditions.md","result":"404. Located and opened actual battery guidance through primary-source search."},
+    {"url":"https://github.com/researchxxl/syncthing-android/releases","result":"Release notes readable; dynamic assets/tag-comparison components displayed loading errors. No artifact download or binary verification claimed."}
+  ],
+  "proposals_not_runtime_observations": ["Scheduled foreground overlap", "20-version retention configuration", "Daily dated disconnected archives", "LocalSend inbox and Mac integration workflow", "Disposable deletion/conflict/independent restore rehearsal"]
+}

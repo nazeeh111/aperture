@@ -1,0 +1,107 @@
+{
+  "clock_start_utc": "2026-10-21 05:29:35 UTC",
+  "clock_end_utc": "2026-10-21 05:31:37 UTC",
+  "timing_exclusions": [
+    "Initial skill/brief read preceded the start clock in the same first tool call.",
+    "Final file serialization/write and final response excluded from measured interval."
+  ],
+  "method": "Independent first-result execution of supplied research skill and H3 brief; no optional skills or other local context read.",
+  "support": [
+    {
+      "url": "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+      "location": "Occurrence downloads",
+      "claim": "Bulk download requires registration and HTTP authentication."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/inaturalist/iNaturalistAPI/main/lib/views/swagger_v1.yml.ejs",
+      "location": "photos 2212-2216; license 2306-2320; taxon_id 2458-2465; privacy 2598-2636; pagination/radius 2838-2876; photo licensing 37-47",
+      "claim": "Documented query parameters and observation/photo licensing distinction; source version 1.3.0 main branch inspected, not pinned."
+    },
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000170738",
+      "location": "Search by geoprivacy; positional accuracy; georeferenced coordinates",
+      "claim": "Observer and taxon privacy both matter; public coordinates may have coarse accuracy."
+    },
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000176171-how-to-add-or-edit-establishment-means-in-inaturalist",
+      "location": "Establishment Means; Notes",
+      "claim": "Native status is place dependent; broad status can conceal regional differences."
+    },
+    {
+      "url": "https://forum.inaturalist.org/t/how-to-use-inaturalists-search-urls-wiki-part-1-of-2/63",
+      "location": "Search by taxon status",
+      "claim": "native=true includes native/endemic; introduced=false also includes unknown."
+    },
+    {
+      "url": "https://www.inaturalist.org/posts/72893-fields-table",
+      "location": "Opening search example",
+      "claim": "Anthophila taxon ID 630955."
+    },
+    {
+      "url": "https://www.pubs.ext.vt.edu/ENTO/ENTO-151/ENTO-151.html",
+      "location": "Native and Solitary Bees in Virginia; Introduction and Bumble Bees",
+      "claim": "Regional identification context, not species-level native verification for an exported dataset."
+    },
+    {
+      "url": "https://docs.qgis.org/3.44/en/docs/user_manual/managing_data_source/supported_data.html",
+      "location": "Delimited text",
+      "claim": "CSV point-layer route."
+    },
+    {
+      "url": "https://docs.qgis.org/3.44/en/docs/user_manual/print_composer/create_output.html",
+      "location": "Export as PDF",
+      "claim": "Downloadable PDF route."
+    },
+    {
+      "url": "https://www.inaturalist.org/api",
+      "location": "GET observations, Example Response, lines 120-170",
+      "claim": "Documented gray-wolf record 2281, no photos, positional_accuracy 354, null license, unobscured flag. Explicitly excluded from bee map."
+    }
+  ],
+  "access_errors": [
+    {
+      "tool": "web",
+      "url": "https://api.inaturalist.org/v1/observations?taxon_name=Bombus%20impatiens&lat=37.2296&lng=-80.4139&radius=20&photos=true&geo=true&geoprivacy=open&taxon_geoprivacy=open&quality_grade=research&per_page=1&order_by=observed_on&order=desc",
+      "error": "URL not accessible via this tool"
+    },
+    {
+      "tool": "exec_command urllib",
+      "url": "https://api.inaturalist.org/v1/observations?taxon_name=Bombus%20impatiens&lat=37.2296&lng=-80.4139&radius=20&photos=true&geo=true&geoprivacy=open&taxon_geoprivacy=open&quality_grade=research&per_page=1&order_by=observed_on&order=desc&d2=2026-10-21",
+      "error": "URLError nodename nor servname provided, or not known; no escalation attempted"
+    },
+    {
+      "tool": "web",
+      "url": "https://api.inaturalist.org/v1/observations?taxon_id=118970&lat=37.2296&lng=-80.4139&radius=20&photos=true&per_page=1",
+      "error": "URL not accessible via this tool"
+    },
+    {
+      "tool": "web",
+      "url": "https://api.gbif.org/v1/occurrence/search?scientificName=Bombus%20impatiens&decimalLatitude=37.1,37.4&decimalLongitude=-80.6,-80.2&mediaType=StillImage&limit=1",
+      "error": "URL not accessible via this tool"
+    }
+  ],
+  "artifacts": [
+    "answer.md",
+    "evidence.json"
+  ],
+  "unavailable_telemetry": [
+    "Model token usage and internal reasoning effort telemetry",
+    "Live bee record counts or records",
+    "Successful execution of provided example script",
+    "QGIS installation/runtime and PDF render verification"
+  ],
+  "limits": [
+    "No bee dataset or downloadable map produced; brief requested a feasible route with documented response example.",
+    "Native species status remains per-species review obligation, not asserted verified.",
+    "No local installation or credential work; no account, observer contact, upload, remote write, field access or sensitive-coordinate reconstruction.",
+    "All additional reads were public web sources and the two authorized local input files."
+  ],
+  "exclusions": [
+    "Unknown/introduced status excluded from native map pending review",
+    "Photos not reproduced",
+    "Obscured/private locations excluded, never reconstructed",
+    "Unknown or >100 m coordinate accuracy excluded from precise point map, retained separately",
+    "Non-bee documented wolf response excluded",
+    "Partial paginated requests must fail rather than become a completed map"
+  ]
+}

@@ -1,5 +1,5 @@
 interface:
-  display_name: "Research"
+  display_name: "Aperture Research"
   short_description: "Discover, verify and develop useful conclusions"
   default_prompt: "Use $research to investigate this question and deliver a supported, useful result."
 policy:

@@ -11,10 +11,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class PackageTests(unittest.TestCase):
     def test_frozen_artifact_identities(self):
-        manifest = json.loads((ROOT / "evaluation/manifest.json").read_text())
-        for name, expected in manifest["files"].items():
-            with self.subTest(name=name):
-                self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), expected)
+        for filename in ("evaluation/manifest.json", "evaluation/v2/manifest.json"):
+            manifest = json.loads((ROOT / filename).read_text())
+            for name, expected in manifest["files"].items():
+                with self.subTest(manifest=filename, name=name):
+                    self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), expected)
 
     def test_relative_document_links_resolve(self):
         for document in ROOT.rglob("*.md"):
@@ -26,13 +27,16 @@ class PackageTests(unittest.TestCase):
                     self.assertTrue((document.parent / path).exists())
 
     def test_banner_is_valid_svg_without_external_resources(self):
-        tree = ET.parse(ROOT / "assets/research.svg")
-        self.assertEqual(tree.getroot().tag, "{http://www.w3.org/2000/svg}svg")
-        for element in tree.iter():
-            self.assertNotIn(element.tag.rsplit("}", 1)[-1], ("script", "foreignObject"))
-            for key, value in element.attrib.items():
-                if key.rsplit("}", 1)[-1] in ("href", "src"):
-                    self.assertTrue(value.startswith("#"))
+        for svg in (ROOT / "assets").glob("*.svg"):
+            tree = ET.parse(svg)
+            self.assertEqual(tree.getroot().tag, "{http://www.w3.org/2000/svg}svg")
+            ids = [e.attrib["id"] for e in tree.iter() if "id" in e.attrib]
+            self.assertEqual(len(ids), len(set(ids)))
+            for element in tree.iter():
+                self.assertNotIn(element.tag.rsplit("}", 1)[-1], ("script", "foreignObject"))
+                for key, value in element.attrib.items():
+                    if key.rsplit("}", 1)[-1] in ("href", "src"):
+                        self.assertTrue(value.startswith("#"))
 
     def test_source_files_contain_no_symlinks_or_local_home_paths(self):
         for folder in (ROOT / "research", ROOT / "docs", ROOT / "evaluation"):

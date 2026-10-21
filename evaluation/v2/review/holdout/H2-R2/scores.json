@@ -1,0 +1,65 @@
+{
+  "pair": "H2-R2",
+  "scores": {
+    "amber": {
+      "dimensions": [
+        4,
+        4,
+        3,
+        3,
+        4,
+        4
+      ],
+      "total": 22,
+      "consequential_errors": [
+        "The implemented repository-only advisory input omits active reviewed package records such as GHSA-44wm-f244-xhp3; OSV is described only as an unimplemented extension."
+      ]
+    },
+    "teal": {
+      "dimensions": [
+        4,
+        4,
+        3,
+        3,
+        2,
+        4
+      ],
+      "total": 20,
+      "consequential_errors": [
+        "Stateless pilot leaves daily snapshot capture/comparison to the volunteer; it creates no baseline or change alerts. Latest-only snapshot misses maintenance releases below the greatest version."
+      ]
+    }
+  },
+  "preference": "tie",
+  "checked_advantages": {
+    "amber": [
+      {
+        "benefit": "Complete stable-release set and persistent atomic baseline with change reporting",
+        "source": "https://docs.pypi.org/api/index-api/",
+        "location": "amber collect/main; original pilot live two-run and reviewer older-branch fixture",
+        "why_material": "Second live run becomes a dated OK line; older-branch stable update is reported. Teal still prints the full snapshot and omits the lower patch entirely."
+      },
+      {
+        "benefit": "Upstream source captures fresh published records absent from reviewed database",
+        "source": "https://github.com/python-pillow/Pillow/security/advisories/GHSA-78g4-xqwv-q3g8",
+        "location": "repository API live response; amber advisory baseline",
+        "why_material": "Captures a concrete current disclosure missing from teal's implemented reviewed-global input."
+      }
+    ],
+    "teal": [
+      {
+        "benefit": "Reviewed global query captures active package advisories absent from upstream list",
+        "source": "https://github.com/advisories/GHSA-44wm-f244-xhp3",
+        "location": "global API live response; teal snapshot",
+        "why_material": "Concrete active record affects Pillow <10.3.0; amber's implemented input misses it. This is a real coverage difference, not just more sources."
+      }
+    ]
+  },
+  "verification_limits": [
+    "No daily scheduler or notification delivery was established, as required by the no-new-jobs constraint.",
+    "Neither complete script implements all recommended production retry/backoff/staleness handling; neither is a claim of exhaustive security coverage.",
+    "Live responses establish endpoint availability and pilot operation at review time; advisory publication can lag and dynamic data can change.",
+    "Teal uses the currently functioning deprecated project-JSON releases field; it is not presently broken, but Index JSON is the documented better route for this use.",
+    "Blinding limit: while inspecting the permitted H1-R2 teal evidence.json, I encountered its candidate-path field. The review therefore was not fully blind. I did not open that path, an arm map, other folders, skills, histories or parent hypotheses. This affects all subsequent scoring in this reviewer batch. A sanitized independent crosscheck is appropriate."
+  ]
+}

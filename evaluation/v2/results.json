@@ -1,0 +1,339 @@
+{
+  "date": "2026-10-21",
+  "project": "Aperture",
+  "comparison_core": "inputs/tested-candidate.txt",
+  "final_core": "inputs/final-core.txt",
+  "development_executions": 4,
+  "holdout_executions": 16,
+  "holdout_pairs": 8,
+  "primary_preferences": {
+    "research": 5,
+    "tie": 2,
+    "native": 1
+  },
+  "primary_score_totals": {
+    "native": 167,
+    "research": 177
+  },
+  "maximum_per_arm": 192,
+  "pairs": [
+    {
+      "pair": "H1-R1",
+      "scores": {
+        "research": {
+          "dimensions": [
+            4,
+            3,
+            3,
+            4,
+            3,
+            4
+          ],
+          "total": 21,
+          "consequential_errors": []
+        },
+        "native": {
+          "dimensions": [
+            4,
+            3,
+            3,
+            3,
+            3,
+            4
+          ],
+          "total": 20,
+          "consequential_errors": []
+        }
+      },
+      "winner": "research",
+      "strength": "slight",
+      "anonymous_mapping": {
+        "teal": "native",
+        "amber": "research"
+      },
+      "review": "review/holdout/H1-R1/review.md",
+      "scores_file": "review/holdout/H1-R1/scores.json",
+      "crosscheck": null
+    },
+    {
+      "pair": "H1-R2",
+      "scores": {
+        "native": {
+          "dimensions": [
+            4,
+            3,
+            3,
+            3,
+            3,
+            4
+          ],
+          "total": 20,
+          "consequential_errors": []
+        },
+        "research": {
+          "dimensions": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ],
+          "total": 24,
+          "consequential_errors": []
+        }
+      },
+      "winner": "research",
+      "strength": "material",
+      "anonymous_mapping": {
+        "amber": "native",
+        "teal": "research"
+      },
+      "review": "review/holdout/H1-R2/review.md",
+      "scores_file": "review/holdout/H1-R2/scores.json",
+      "crosscheck": "review/holdout/H1-R2/fresh-crosscheck.json"
+    },
+    {
+      "pair": "H2-R1",
+      "scores": {
+        "native": {
+          "dimensions": [
+            4,
+            4,
+            3,
+            3,
+            3,
+            3
+          ],
+          "total": 20,
+          "consequential_errors": [
+            "Latest-only release state silently misses a new stable maintenance release on an older branch; reproduced with controlled fixture."
+          ]
+        },
+        "research": {
+          "dimensions": [
+            4,
+            4,
+            3,
+            3,
+            4,
+            4
+          ],
+          "total": 22,
+          "consequential_errors": [
+            "Primary automated sources omit current upstream-only advisories such as GHSA-78g4-xqwv-q3g8; the reviewed-coverage caveat is honest, but no upstream fallback is included."
+          ]
+        }
+      },
+      "winner": "research",
+      "strength": "slight",
+      "anonymous_mapping": {
+        "amber": "native",
+        "teal": "research"
+      },
+      "review": "review/holdout/H2-R1/review.md",
+      "scores_file": "review/holdout/H2-R1/scores.json",
+      "crosscheck": null
+    },
+    {
+      "pair": "H2-R2",
+      "scores": {
+        "research": {
+          "dimensions": [
+            4,
+            4,
+            3,
+            3,
+            4,
+            4
+          ],
+          "total": 22,
+          "consequential_errors": [
+            "The implemented repository-only advisory input omits active reviewed package records such as GHSA-44wm-f244-xhp3; OSV is described only as an unimplemented extension."
+          ]
+        },
+        "native": {
+          "dimensions": [
+            4,
+            4,
+            3,
+            3,
+            2,
+            4
+          ],
+          "total": 20,
+          "consequential_errors": [
+            "Stateless pilot leaves daily snapshot capture/comparison to the volunteer; it creates no baseline or change alerts. Latest-only snapshot misses maintenance releases below the greatest version."
+          ]
+        }
+      },
+      "winner": "tie",
+      "strength": "tie",
+      "anonymous_mapping": {
+        "teal": "native",
+        "amber": "research"
+      },
+      "review": "review/holdout/H2-R2/review.md",
+      "scores_file": "review/holdout/H2-R2/scores.json",
+      "crosscheck": "review/holdout/H2-R2/fresh-crosscheck.json"
+    },
+    {
+      "pair": "H3-R1",
+      "scores": {
+        "research": {
+          "dimensions": [
+            4,
+            4,
+            3,
+            4,
+            3,
+            4
+          ],
+          "total": 22,
+          "consequential_errors": []
+        },
+        "native": {
+          "dimensions": [
+            3,
+            4,
+            3,
+            3,
+            3,
+            4
+          ],
+          "total": 20,
+          "consequential_errors": []
+        }
+      },
+      "winner": "research",
+      "strength": "slight",
+      "anonymous_mapping": {
+        "teal": "native",
+        "amber": "research"
+      },
+      "review": "review/holdout/H3-R1/review.md",
+      "scores_file": "review/holdout/H3-R1/scores.json",
+      "crosscheck": null
+    },
+    {
+      "pair": "H3-R2",
+      "scores": {
+        "native": {
+          "dimensions": [
+            4,
+            4,
+            3,
+            4,
+            4,
+            3
+          ],
+          "total": 22,
+          "consequential_errors": []
+        },
+        "research": {
+          "dimensions": [
+            4,
+            4,
+            3,
+            4,
+            3,
+            4
+          ],
+          "total": 22,
+          "consequential_errors": []
+        }
+      },
+      "winner": "native",
+      "strength": "material",
+      "anonymous_mapping": {
+        "amber": "native",
+        "teal": "research"
+      },
+      "review": "review/holdout/H3-R2/review.md",
+      "scores_file": "review/holdout/H3-R2/scores.json",
+      "crosscheck": null
+    },
+    {
+      "pair": "H4-R1",
+      "scores": {
+        "native": {
+          "dimensions": [
+            4,
+            4,
+            4,
+            3,
+            3,
+            4
+          ],
+          "total": 22,
+          "consequential_errors": []
+        },
+        "research": {
+          "dimensions": [
+            4,
+            4,
+            3,
+            4,
+            4,
+            4
+          ],
+          "total": 23,
+          "consequential_errors": []
+        }
+      },
+      "winner": "research",
+      "strength": "slight",
+      "anonymous_mapping": {
+        "amber": "native",
+        "teal": "research"
+      },
+      "review": "review/holdout/H4-R1/review.md",
+      "scores_file": "review/holdout/H4-R1/scores.json",
+      "crosscheck": null
+    },
+    {
+      "pair": "H4-R2",
+      "scores": {
+        "research": {
+          "dimensions": [
+            3,
+            4,
+            3,
+            4,
+            3,
+            4
+          ],
+          "total": 21,
+          "consequential_errors": []
+        },
+        "native": {
+          "dimensions": [
+            4,
+            4,
+            4,
+            4,
+            3,
+            4
+          ],
+          "total": 23,
+          "consequential_errors": []
+        }
+      },
+      "winner": "tie",
+      "strength": "tie",
+      "anonymous_mapping": {
+        "teal": "native",
+        "amber": "research"
+      },
+      "review": "review/holdout/H4-R2/review.md",
+      "scores_file": "review/holdout/H4-R2/scores.json",
+      "crosscheck": null
+    }
+  ],
+  "limits": [
+    "Primary H1/H2 reviewer encountered arm-revealing evidence metadata. Original scoring retained.",
+    "Sanitized fresh crosscheck covered H1-R2 and H2-R2; access/coverage judgments differ and are published.",
+    "Final source-coverage sentence and UI brand are a post-benchmark narrow repair, checked separately; 8-pair scores do not measure those changes.",
+    "Same-family model review; live source/tool access varies; no population superiority or causal ablation inference."
+  ]
+}

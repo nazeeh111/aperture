@@ -1,0 +1,54 @@
+{
+  "packet": "development-D1",
+  "review_date": "2026-10-21",
+  "anonymous_preference": "tie",
+  "material_win": false,
+  "rubric_order": [
+    "factual_claim_support",
+    "constraints_feasibility",
+    "breadth_material_alternative",
+    "decisive_source_inspection",
+    "artifact_actionability",
+    "falsifiable_verification_uncertainty"
+  ],
+  "mint": {
+    "scores": [
+      3,
+      3,
+      3,
+      2,
+      2,
+      3
+    ],
+    "total": 16
+  },
+  "ochre": {
+    "scores": [
+      3,
+      3,
+      3,
+      3,
+      1,
+      4
+    ],
+    "total": 17
+  },
+  "critical_failures": [],
+  "consequential_shortcomings": {
+    "mint": [
+      "One direct URL inferred without field-level status",
+      "All selected landing pages only indexed; direct opens fail",
+      "No live file/pixel confirmation"
+    ],
+    "ochre": [
+      "All three required direct-image URL values empty",
+      "No live file/pixel confirmation"
+    ]
+  },
+  "complete_deliverable": {
+    "mint": false,
+    "ochre": false
+  },
+  "reason": "Mint has stronger candidate asset fields; ochre has stronger live selected-record evidence and explicit missing data. Neither completes the three-image usable URL handoff.",
+  "review_scope": "Blind source review; no binaries downloaded; HEAD-only availability checks failed DNS; exact backend model telemetry unavailable."
+}

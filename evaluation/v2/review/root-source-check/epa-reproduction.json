@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_debug=0&_program=dataprog.ad_data_daily_airnow_method.sas&poll=88101%27%2C%2788502&year=2023&state=17&cbsa=-1&county=-1&site=170310076",
+    "bytes": 313,
+    "sha256": "5c39c9df43511738f9790b99e1d3663679bee979bc39b7c24931ff011b843288",
+    "rows": 3,
+    "matches_worker_bytes_and_rows": false,
+    "columns": [
+      "<p>The following data link is active for the next 10 minutes",
+      " after which you must resubmit your query.<br />"
+    ]
+  },
+  {
+    "url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_debug=0&_program=dataprog.ad_data_daily_airnow_method.sas&poll=88101%27%2C%2788502&year=2024&state=17&cbsa=-1&county=-1&site=170310076",
+    "bytes": 313,
+    "sha256": "23622e9283f695707a50ffec5f9294bc597fce579df8fe9b469652970cbe725f",
+    "rows": 3,
+    "matches_worker_bytes_and_rows": false,
+    "columns": [
+      "<p>The following data link is active for the next 10 minutes",
+      " after which you must resubmit your query.<br />"
+    ]
+  }
+]

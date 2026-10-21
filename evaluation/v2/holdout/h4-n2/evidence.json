@@ -1,0 +1,98 @@
+{
+  "task": "H4",
+  "start": "2026-10-21 05:37:21 UTC",
+  "method": "Native web search/open and bounded Python urllib requests; no optional skills or delegation.",
+  "decisive_sources": [
+    {
+      "url": "https://help.openalex.org/api/authentication/",
+      "location": "Authentication; Rate limits",
+      "supports": "Anonymous basic API access; cursor paging past first page requires free key; basic paging limit documented as 10000.",
+      "status": "read via web open"
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
+      "location": "Works endpoint: Filter by date; Filters for relationships",
+      "supports": "from-index-date includes external enrichment; updates filter can target a DOI; relation types include is-preprint-of.",
+      "status": "read via web open"
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/retraction-watch/",
+      "location": "Retraction Watch; REST API",
+      "supports": "Retraction Watch integrated in Crossref REST API, source field; corrections and expressions of concern less comprehensive than retractions.",
+      "status": "read via web open"
+    },
+    {
+      "url": "https://support.datacite.org/docs/connecting-versions-with-related-identifiers",
+      "location": "Release or publication stages",
+      "supports": "IsVersionOf/HasVersion for preprint and version of record.",
+      "status": "read via web search result"
+    },
+    {
+      "url": "https://support.datacite.org/docs/api-queries",
+      "location": "Queries and filtering",
+      "supports": "Public DataCite query endpoint for discovery.",
+      "status": "read via web search result"
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api",
+      "location": "REST API opening",
+      "supports": "Public metadata, no signup required.",
+      "status": "read via web search result"
+    },
+    {
+      "url": "https://arxiv.org/abs/2311.00341",
+      "location": "lines 8-28 in web open representation",
+      "supports": "Title, DataCite DOI, v1 November 1 2023 and v2 November 27 2023.",
+      "status": "read via web open"
+    },
+    {
+      "url": "https://github.com/arXiv/arxiv-docs/blob/develop/source/help/api/user-manual.md",
+      "location": "Query Interface and Atom fields",
+      "supports": "arXiv version identifiers, published/updated distinction, small query batches.",
+      "status": "read via web search result"
+    }
+  ],
+  "access_errors": [
+    {
+      "url": "https://api.crossref.org/works?query.title=direct%20air%20capture&rows=1&select=DOI,title,published,relation,update-to",
+      "tool": "Python urllib",
+      "error": "URLError [Errno 8] nodename nor servname provided, or not known",
+      "bytes_received": 0
+    },
+    {
+      "url": "https://api.openalex.org/works?search=%22direct%20air%20capture%22&per_page=1&select=id,doi,title,publication_date,is_retracted,locations",
+      "tool": "Python urllib",
+      "error": "URLError [Errno 8] nodename nor servname provided, or not known",
+      "bytes_received": 0
+    },
+    {
+      "url": "https://api.crossref.org/works?query.title=direct%20air%20capture&rows=1&select=DOI,title,published,relation,update-to",
+      "tool": "web open",
+      "error": "URL is not accessible via this tool"
+    },
+    {
+      "url": "https://api.openalex.org/works?search=%22direct%20air%20capture%22&per_page=1&select=id,doi,title,publication_date,is_retracted,locations",
+      "tool": "web open",
+      "error": "URL is not accessible via this tool"
+    }
+  ],
+  "artifacts": [
+    "answer.md",
+    "evidence.json"
+  ],
+  "limitations": [
+    "No successful live API payload; examples of workflow requests are recommendations, not tested operational harvesting.",
+    "Real record projected from arXiv landing page; no journal-version relation or integrity status inferred.",
+    "No claim of exhaustive discovery or complete retraction/correction coverage.",
+    "No new monthly digest or scheduled automation actually created."
+  ],
+  "unavailable_telemetry": [
+    "Token and monetary usage",
+    "Web service raw transfer byte counts",
+    "Web backend request timing and caching details",
+    "API rate-limit headers because API requests did not succeed"
+  ],
+  "download_scope": "No remote files saved. No PDFs or datasets requested. Python reads were capped at 1048576 bytes and failed before receiving data; web tool raw transfer sizes unavailable.",
+  "exclusions": "Elapsed interval ends before final artifact serialization/writes and final response; excludes parent task activity. No other local files, history, memories, sibling artifacts, accounts, credentials, installs, paid APIs or external writes accessed.",
+  "end": "2026-10-21 05:38:56 UTC"
+}

@@ -1,0 +1,53 @@
+{
+  "pair": "H4-R1",
+  "scores": {
+    "amber": {
+      "dimensions": [
+        4,
+        4,
+        4,
+        3,
+        3,
+        4
+      ],
+      "total": 22,
+      "consequential_errors": []
+    },
+    "teal": {
+      "dimensions": [
+        4,
+        4,
+        3,
+        4,
+        4,
+        4
+      ],
+      "total": 23,
+      "consequential_errors": []
+    }
+  },
+  "preference": "teal_slight",
+  "checked_advantages": {
+    "amber": [
+      {
+        "benefit": "Adds DataCite version relationships and discovery beyond Crossref/OSTI.",
+        "source": "https://support.datacite.org/docs/connecting-versions-with-related-identifiers",
+        "location": "Release or publication stages; canonical version and sequential version examples",
+        "why_material": "Official documentation supports IsVersionOf/HasVersion and IsNewVersionOf. This gives a concrete route to recognize repository/preprint versions that Crossref relationships alone may miss; no actual additional DAC item was demonstrated."
+      }
+    ],
+    "teal": [
+      {
+        "benefit": "Provides an independently verifiable real correction fixture with the affected study, location, numeric change and notice date.",
+        "source": "https://www.nature.com/articles/s43247-024-01384-w",
+        "location": "Published date line 19; correction target/paragraph lines 43-44",
+        "why_material": "The publisher confirms the example. A reader can validate a notice ledger against a substantive changed estimate rather than only a generic XML schema. Amber's XML is also a legitimate documented schema, so this earns a slight rather than material preference."
+      }
+    ]
+  },
+  "verification_limits": [
+    "Live API reads failed independently through both web and local urllib: web reported inaccessible URLs; urllib reported Errno 8 DNS resolution failures. This corroborates present environment limitations, not an exact historical tool trace or worldwide API outage.",
+    "No live regional harvest, QGIS execution, PDF rendering, scheduler, literature recall or deduplication accuracy measurement was possible. Recommendations and synthetic fixture checks are distinct from successful real-data operation.",
+    "Only assigned packets and protocol were inspected. Original answers and evidence were preserved. No accounts, installs, credentials, remote writes, other reviews or arm identity information were used."
+  ]
+}

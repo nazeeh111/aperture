@@ -1,0 +1,15 @@
+{
+  "frozen_before_any_holdout_execution": true,
+  "files": {
+    "candidate/research/SKILL.md": "5e2490052be7e761113f8045f2f52e737a032f69c4a661f19a6446cec0432de7",
+    "candidate/research/agents/openai.yaml": "46fe171b93e31a4587e332c29ba881564b0b313cb41d6d7c2b5e82383f0cfe07",
+    "candidate/research/scripts/snapshot_github.py": "fd018f824d66fcf0b2ddac97dca9ea76f95c6758510d96ba78e0ad78fddd0b43",
+    "holdout/H1.md": "9513cc9c43da3018413b953d709550dff2c785c07397c763906824f3f7aa3939",
+    "holdout/H4.md": "04aa8d06d3e4a67640f23b3de20c453bad1bc2811949605bf935c18a4108f5ac",
+    "holdout/H3.md": "6481b0c90514db8e947d59b26ac3253ee199dd21ceadccf452ceffaf48144646",
+    "holdout/H2.md": "0186f35e8aa1f59b9b6d2d196870887eeb7633eb580cd036bfe1b59963179a40",
+    "PROTOCOL.md": "81c3841fe90b87a542a28c8f03dcfd1f6fc4e1303e6232a4987cade9929831a7",
+    "INTERVENTION.md": "7d266e59b67131f8d5dc607cf85e0ad0498b310068f0b4028da36dde7916d22e",
+    "HOLDOUT_PREFLIGHT.md": "47a7be25dda5e9a17695539b5da6ab8a4face8bc1eab0ddf9ff9b3e4acb25255"
+  }
+}

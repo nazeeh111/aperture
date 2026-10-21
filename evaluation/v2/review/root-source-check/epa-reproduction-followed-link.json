@@ -1,0 +1,74 @@
+[
+  {
+    "query_url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_debug=0&_program=dataprog.ad_data_daily_airnow_method.sas&poll=88101%27%2C%2788502&year=2023&state=17&cbsa=-1&county=-1&site=170310076",
+    "query_response": "HTML with temporary CSV link, followed as supplied code requires",
+    "bytes": 113895,
+    "sha256": "1ebcaa5ee9c59358f90a8072f4f510ea59779b48ee83cc42cfad5792a57fbfa2",
+    "rows": 384,
+    "streams": {
+      "1/545/88101": 60,
+      "3/731/88502": 324
+    },
+    "matches_worker_bytes_and_rows": true,
+    "first_row": {
+      "Date": "01/06/2023",
+      "Source": "AQS",
+      "Site ID": "170310076",
+      "POC": "1",
+      "Daily Mean PM2.5 Concentration": "10.5",
+      "Units": "ug/m3 LC",
+      "Daily AQI Value": "54",
+      "Local Site Name": "COM ED MAINTENANCE BLDG",
+      "Daily Obs Count": "1",
+      "Percent Complete": "100.0000",
+      "AQS Parameter Code": "88101",
+      "AQS Parameter Description": "PM2.5 - Local Conditions",
+      "Method Code": "545",
+      "Method Description": "Met One E-SEQ-FRM PM2.5 with VSCC",
+      "CBSA Code": "16980",
+      "CBSA Name": "Chicago-Naperville-Elgin, IL-IN-WI",
+      "State FIPS Code": "17",
+      "State": "Illinois",
+      "County FIPS Code": "031",
+      "County": "Cook",
+      "Site Latitude": "41.7513999786378",
+      "Site Longitude": "-87.7134881520007"
+    }
+  },
+  {
+    "query_url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_debug=0&_program=dataprog.ad_data_daily_airnow_method.sas&poll=88101%27%2C%2788502&year=2024&state=17&cbsa=-1&county=-1&site=170310076",
+    "query_response": "HTML with temporary CSV link, followed as supplied code requires",
+    "bytes": 96622,
+    "sha256": "c0b22de91ca4a0f824487e64756857546a63fbf093715b7b97859b46999221da",
+    "rows": 326,
+    "streams": {
+      "1/545/88101": 60,
+      "3/731/88502": 266
+    },
+    "matches_worker_bytes_and_rows": true,
+    "first_row": {
+      "Date": "01/01/2024",
+      "Source": "AQS",
+      "Site ID": "170310076",
+      "POC": "1",
+      "Daily Mean PM2.5 Concentration": "2.6",
+      "Units": "ug/m3 LC",
+      "Daily AQI Value": "14",
+      "Local Site Name": "COM ED MAINTENANCE BLDG",
+      "Daily Obs Count": "1",
+      "Percent Complete": "100.0000",
+      "AQS Parameter Code": "88101",
+      "AQS Parameter Description": "PM2.5 - Local Conditions",
+      "Method Code": "545",
+      "Method Description": "Met One E-SEQ-FRM PM2.5 with VSCC",
+      "CBSA Code": "16980",
+      "CBSA Name": "Chicago-Naperville-Elgin, IL-IN-WI",
+      "State FIPS Code": "17",
+      "State": "Illinois",
+      "County FIPS Code": "031",
+      "County": "Cook",
+      "Site Latitude": "41.7513999786378",
+      "Site Longitude": "-87.7134881520007"
+    }
+  }
+]

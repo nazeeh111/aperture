@@ -1,0 +1,163 @@
+{
+  "task": "H4",
+  "skill_applied": "[task workspace]/candidate/research/SKILL.md",
+  "brief": "[task workspace]/holdout/H4.md",
+  "clock_start_utc": "2026-10-21 05:31:45 UTC",
+  "clock_end_utc": "2026-10-21 05:34:03 UTC",
+  "decisive_support": [
+    {
+      "claim": "Crossref public REST API requires no sign-up",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "location": "REST API opening description, no-sign-up paragraph",
+      "access": "web search full excerpt"
+    },
+    {
+      "claim": "Index-date changes include external sources; updates filter targets affected DOI",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
+      "location": "lines 155-168 and Search for a specific value / Relationships table, updates row",
+      "access": "opened date section; search excerpt included relationships table"
+    },
+    {
+      "claim": "Crossref Retraction Watch provenance and incomplete corrections coverage",
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/retraction-watch/",
+      "location": "lines 117-127",
+      "access": "opened"
+    },
+    {
+      "claim": "Explicit preprint relation is publisher-deposited",
+      "url": "https://www.crossref.org/documentation/schema-library/markup-guide-record-types/posted-content-includes-preprints/",
+      "location": "Updating metadata with relationship to AAM/VoR",
+      "access": "web search full excerpt"
+    },
+    {
+      "claim": "Current OpenAlex docs allow keyless basic queries but key required for deeper cursor paging",
+      "url": "https://help.openalex.org/api/authentication/",
+      "location": "lines 26-28, 87-106",
+      "access": "opened; API runtime unavailable"
+    },
+    {
+      "claim": "Older OpenAlex announcement conflicts with current terminology and limits",
+      "url": "https://groups.google.com/g/openalex-users/c/rI1GIAySpVQ",
+      "location": "API keys required starting Feb 13 announcement, credit-based limits",
+      "access": "search excerpt; current help favored; no historical rate quoted in final"
+    },
+    {
+      "claim": "OSTI offers DOE research metadata and report-channel discovery",
+      "url": "https://www.osti.gov/api/v1/docs",
+      "location": "Introduction, Record List Search and Record Model",
+      "access": "search full excerpt; subsequent open failed 502; runtime unavailable"
+    },
+    {
+      "claim": "Real correction notice date and changed coefficient",
+      "url": "https://www.nature.com/articles/s43247-024-01384-w",
+      "location": "lines 17-44 and 139-147",
+      "access": "publisher HTML opened, cookie-error query redirect still returned article text",
+      "values": {
+        "notice_date": "2024-04-18",
+        "original_doi": "10.1038/s43247-024-01334-6",
+        "old_estimate": -0.033,
+        "new_estimate": -0.006,
+        "standard_error": 0.007
+      }
+    },
+    {
+      "claim": "Secondary search date differs from publisher date",
+      "url": "https://scholars.duke.edu/publication/1631642",
+      "location": "Publication Date December 1 2024",
+      "access": "search excerpt only; excluded from final fixture in favor of publisher"
+    }
+  ],
+  "exploration": [
+    {
+      "url": "https://europepmc.org/RestfulWebService",
+      "result": "Life-sciences scope, not selected as main DAC discovery source"
+    },
+    {
+      "url": "https://help.openalex.org/data/works/attributes/",
+      "result": "Search excerpt describes multiple DOI locations; no runtime deduplication tested"
+    },
+    {
+      "url": "https://www.crossref.org/documentation/principles-practices/best-practices/versioning/",
+      "result": "Search excerpt confirms separate DOI for editorial updates"
+    }
+  ],
+  "access_errors": [
+    {
+      "tool": "exec_command Python urllib",
+      "urls": [
+        "https://api.crossref.org/works?query=%22direct+air+capture%22&filter=from-index-date%3A2026-09-01%2Cuntil-index-date%3A2026-10-21&rows=2&select=DOI%2Ctitle%2Ctype%2Crelation%2Cupdate-to%2Cpublished%2Cindexed",
+        "https://api.openalex.org/works?search=%22direct+air+capture%22&filter=from_publication_date%3A2026-09-01%2Cto_publication_date%3A2026-10-21&per_page=2&select=id%2Cdoi%2Ctitle%2Cpublication_date%2Cis_retracted%2Clocations",
+        "https://www.osti.gov/api/v1/records?search=%22direct+air+capture%22&rows=1"
+      ],
+      "error": "URLError [Errno 8] nodename nor servname provided, or not known",
+      "bytes_downloaded": 0
+    },
+    {
+      "tool": "web.open",
+      "url": "https://api.crossref.org/works/10.1038/s43247-024-01384-w",
+      "error": "not accessible via this tool"
+    },
+    {
+      "tool": "web.open",
+      "url": "https://api.openalex.org/works?search=direct%20air%20capture&per_page=1&select=id,doi,title,is_retracted",
+      "error": "not accessible via this tool"
+    },
+    {
+      "tool": "web.open",
+      "url": "https://www.osti.gov/api/v1/records?search=%22direct%20air%20capture%22&rows=1",
+      "error": "not accessible via this tool"
+    },
+    {
+      "tool": "web.open",
+      "url": "https://www.osti.gov/api/v1/docs",
+      "error": "502 Bad Gateway"
+    },
+    {
+      "tool": "web.open",
+      "url": "https://help.openalex.org/api/pricing/",
+      "error": "not accessible via this tool"
+    },
+    {
+      "tool": "web.find",
+      "urls": [
+        "https://www.osti.gov/api/v1/docs",
+        "https://api.crossref.org/swagger-ui/index.html"
+      ],
+      "error": "No matching text; did not use as proof of absent fields"
+    }
+  ],
+  "verification": {
+    "publisher_fixture": "Directly observed HTML; manually normalized schema, not API JSON.",
+    "end_to_end_workflow": "Not executed.",
+    "discovery_completeness": "Not established.",
+    "deduplication_performance": "Not measured.",
+    "api_keyless_runtime": "Not verified for any provider in this environment.",
+    "local_downloads": "No remote response files saved. Python attempted responses were limited to a maximum read of 1 MiB; all failed before body retrieval.",
+    "web_transfer_size": "Unavailable. Managed search/open transfer sizes not exposed; cannot attest their network bodies were under 1 MiB.",
+    "allowed_constraints": "No accounts, credentials, installations, author contact, spending or remote writes."
+  },
+  "artifacts": [
+    "[task workspace]/holdout/h4-s1/answer.md",
+    "[task workspace]/holdout/h4-s1/evidence.json"
+  ],
+  "unavailable_telemetry": [
+    "Token usage",
+    "Search backend retrieval timestamps beyond displayed crawl metadata",
+    "HTTP response headers for blocked API requests",
+    "Managed web response byte sizes",
+    "Provider quotas actually remaining"
+  ],
+  "timing_exclusions": [
+    "Final artifact write and tool completion",
+    "Final chat acknowledgement",
+    "Any downstream evaluation"
+  ],
+  "scope_exclusions": [
+    "Other optional skills",
+    "Memory and history files",
+    "Sibling outputs and protocol files",
+    "Delegation",
+    "Bulk datasets and PDF downloads",
+    "A running scheduler or automatic digest publication"
+  ]
+}

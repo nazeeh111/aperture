@@ -1,0 +1,53 @@
+{
+  "pair": "H4-R2",
+  "scores": {
+    "amber": {
+      "dimensions": [
+        3,
+        4,
+        3,
+        4,
+        3,
+        4
+      ],
+      "total": 21,
+      "consequential_errors": []
+    },
+    "teal": {
+      "dimensions": [
+        4,
+        4,
+        4,
+        4,
+        3,
+        4
+      ],
+      "total": 23,
+      "consequential_errors": []
+    }
+  },
+  "preference": "tie",
+  "checked_advantages": {
+    "amber": [
+      {
+        "benefit": "Uses a real correction and resolves conflicting notice dates against the publisher.",
+        "source": "https://www.nature.com/articles/s43247-024-01384-w ; https://scholars.duke.edu/publication/1631642",
+        "location": "Publisher date/correction paragraph lines 19,43-44; Duke publication date line 19",
+        "why_material": "Both source dates were independently checked. This prevents a bad notice date from entering a monthly ledger and gives a real integrity fixture; teal instead provides a real version fixture."
+      }
+    ],
+    "teal": [
+      {
+        "benefit": "Provides a real two-version preprint fixture and a documented DataCite linking route.",
+        "source": "https://arxiv.org/abs/2311.00341 ; https://support.datacite.org/docs/connecting-versions-with-related-identifiers",
+        "location": "arXiv submission history lines 8,23,27-28; DataCite Release or publication stages",
+        "why_material": "The arXiv title, DOI and November 1/27 2023 version dates are correct. Keeping arXiv base ID plus v1/v2 enables one-family digest grouping, and DataCite links cover release stages outside Crossref."
+      }
+    ]
+  },
+  "verification_limits": [
+    "Live API reads failed independently through both web and local urllib: web reported inaccessible URLs; urllib reported Errno 8 DNS resolution failures. This corroborates present environment limitations, not an exact historical tool trace or worldwide API outage.",
+    "No live regional harvest, QGIS execution, PDF rendering, scheduler, literature recall or deduplication accuracy measurement was possible. Recommendations and synthetic fixture checks are distinct from successful real-data operation.",
+    "Only assigned packets and protocol were inspected. Original answers and evidence were preserved. No accounts, installs, credentials, remote writes, other reviews or arm identity information were used."
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "clock_start_utc": "2026-10-21 05:21:11 UTC",
+  "clock_end_utc": "2026-10-21 05:23:53 UTC",
+  "status": "partial; direct image URLs unresolved",
+  "primary_urls_opened_successfully": [
+    {
+      "url": "https://science.nasa.gov/resource/apollo-8s-iconic-earthrise/",
+      "decisive_location": "lines 288-318: credit, historical date, original caption, highest-resolution JPEG 1.80 MB"
+    },
+    {
+      "url": "https://science.nasa.gov/resource/the-blue-marble/",
+      "decisive_location": "lines 237-253: date, AS17-148-22727 identifier, instrument, NASA JSC credit"
+    },
+    {
+      "url": "https://science.nasa.gov/resource/voyager-pale-blue-dot-download/",
+      "decisive_location": "lines 237-287: PIA23645 identifier, credit, 1990 historical date, 2020 processing, 29.85 MB TIFF download listing"
+    },
+    {
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "decisive_location": "lines 245-256: educational/public-exhibit/web reuse, acknowledgment, third-party exceptions"
+    },
+    {
+      "url": "https://www.loc.gov/legal/security-copyright-and-privacy/understanding-copyright/",
+      "decisive_location": "Using Items from the Library\u2019s Website: availability does not establish reuse rights"
+    }
+  ],
+  "search_retrieved_primary_records_not_successfully_opened": [
+    "https://www.si.edu/object/photograph-moon%3Anmah_1184258",
+    "https://www.si.edu/openaccess/faq",
+    "https://www.loc.gov/pictures/item/2002695396/",
+    "https://www.loc.gov/pictures/item/2002695502/"
+  ],
+  "access_failures": [
+    {
+      "url": "https://www.si.edu/object/photograph-moon%3Anmah_1184258",
+      "error": "Cache miss"
+    },
+    {
+      "url": "https://www.si.edu/object/nmah_1184258",
+      "error": "not accessible via web tool"
+    },
+    {
+      "url": "https://www.si.edu/openaccess/faq",
+      "error": "404"
+    },
+    {
+      "url": "https://www.si.edu/openaccess",
+      "error": "404"
+    },
+    {
+      "url": "https://www.loc.gov/item/2009632011/",
+      "error": "403"
+    },
+    {
+      "url": "https://www.loc.gov/item/2002716428/",
+      "error": "fetch error"
+    },
+    {
+      "url": "https://www.loc.gov/pictures/item/2002695396/",
+      "error": "403"
+    },
+    {
+      "url": "https://www.loc.gov/pictures/item/2002695502/",
+      "error": "403"
+    },
+    {
+      "url": "https://www.loc.gov/pictures/api",
+      "error": "403"
+    },
+    {
+      "url": "https://images-api.nasa.gov/search?nasa_id=as08-14-2383",
+      "error": "not accessible via web tool"
+    },
+    {
+      "url": "https://images-api.nasa.gov/asset/as08-14-2383",
+      "error": "not accessible via web tool"
+    },
+    {
+      "url": "https://images-api.nasa.gov/asset/as17-148-22727",
+      "error": "not accessible via web tool"
+    },
+    {
+      "url": "https://images-api.nasa.gov/asset/PIA23645",
+      "error": "not accessible via web tool"
+    },
+    {
+      "url": "https://science.nasa.gov/resource/pia23645-pale-blue-dot-revisited/",
+      "error": "not accessible via web tool"
+    },
+    {
+      "url": "https://eol.jsc.nasa.gov/Collections/EarthFromSpace/images.pl?photo=AS17-148-22727",
+      "error": "400 timeout"
+    },
+    {
+      "url": "NASA Science three selected HTML records via local urllib",
+      "error": "DNS resolution unavailable"
+    }
+  ],
+  "image_binary_downloads": 0,
+  "telemetry": "Token/cost telemetry unavailable. This is a compact evidence record, not a complete tool trace."
+}

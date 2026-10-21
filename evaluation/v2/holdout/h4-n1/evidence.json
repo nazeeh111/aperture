@@ -1,0 +1,104 @@
+{
+  "task": "H4",
+  "run": "h4-n1",
+  "clock_start_utc": "2026-10-21 05:31:22 UTC",
+  "clock_end_utc": "2026-10-21 05:32:26 UTC",
+  "timing_scope": "Start before reading H4; end after research and answer drafting, immediately before final artifact write. Excludes artifact serialization/write and final handoff.",
+  "inputs_read": [
+    "[task workspace]/holdout/H4.md"
+  ],
+  "sources": [
+    {
+      "url": "https://help.openalex.org/api/authentication/",
+      "supports": "Current no-key basic queries, key required for cursor paging beyond first page, basic paging ceiling, rate-limit telemetry; retrieved web search full text; updated October 15 2026."
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "supports": "No signup required; publisher and trusted-source metadata."
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/tips-for-using-the-crossref-rest-api/",
+      "supports": "Index date includes third-party changes; distinction from publication and member update dates."
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/rest-api-filters/",
+      "supports": "updates, update-type and relation filter syntax."
+    },
+    {
+      "url": "https://www.crossref.org/documentation/schema-library/markup-guide-metadata-segments/relationships/",
+      "supports": "Relations and exact correction XML schema example included in answer."
+    },
+    {
+      "url": "https://www.crossref.org/documentation/retrieve-metadata/retraction-watch/",
+      "supports": "Retraction Watch integration, update-to source field, less comprehensive corrections and expressions of concern."
+    },
+    {
+      "url": "https://www.osti.gov/api/v1/docs",
+      "supports": "DOE research repository; GET-only API and search paging; retrieved indexed full documentation but direct open 502."
+    },
+    {
+      "url": "https://support.datacite.org/docs/api",
+      "supports": "Public unauthenticated metadata retrieval."
+    },
+    {
+      "url": "https://support.datacite.org/docs/versioning",
+      "supports": "Version links, same DOI minor changes and new DOI major changes."
+    }
+  ],
+  "access_errors": [
+    {
+      "url": "https://developers.openalex.org/how-to-use-the-api/api-overview",
+      "error": "web tool 500 redirect to inaccessible help.openalex.org path"
+    },
+    {
+      "url": "https://developers.openalex.org/how-to-use-the-api/rate-limits-and-authentication",
+      "error": "web tool 500 redirect to inaccessible help.openalex.org path"
+    },
+    {
+      "url": "https://api.crossref.org/works/10.1016/j.joule.2018.05.006",
+      "error": "web open inaccessible; shell DNS Errno 8"
+    },
+    {
+      "url": "https://api.openalex.org/works?search=direct%20air%20capture&per-page=1",
+      "error": "shell DNS Errno 8"
+    },
+    {
+      "url": "https://www.osti.gov/api/v1/records?search=direct%20air%20capture&rows=1",
+      "error": "shell DNS Errno 8"
+    },
+    {
+      "url": "https://api.datacite.org/dois?query=%22direct%20air%20capture%22&page%5Bsize%5D=1",
+      "error": "shell DNS Errno 8"
+    },
+    {
+      "url": "https://www.osti.gov/api/v1/docs",
+      "error": "direct web open 502; indexed documentation available"
+    }
+  ],
+  "verification": {
+    "live_harvest": false,
+    "example": "Official documented XML schema, illustrative DOI, not a real DAC correction; Crossref query URLs provided but not successfully executed.",
+    "downloaded_files": 0,
+    "download_size_limit": "Each attempted API read capped at 1 MiB; none returned body; recommended workflow aborts below 1 MiB.",
+    "word_count_including_example": 515
+  },
+  "artifacts": [
+    "answer.md",
+    "evidence.json"
+  ],
+  "exclusions": [
+    "No other local files, history, memory, sibling outputs or protocols read",
+    "No optional skills or delegation",
+    "No credentials, accounts, installs, paid APIs or external writes",
+    "No scheduler configured; workflow recommendation only",
+    "No completeness or absence-of-retraction guarantee",
+    "No raw web response artifacts saved under outputs-only constraint"
+  ],
+  "unavailable_telemetry": [
+    "Token usage",
+    "Monetary cost",
+    "Provider compute time",
+    "Live API response sizes, counts, headers and remaining quotas",
+    "Search index freshness beyond source-reported crawl/update dates"
+  ]
+}

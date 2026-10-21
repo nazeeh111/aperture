@@ -1,0 +1,34 @@
+{
+  "H1-R1": {
+    "teal": "h1-n1",
+    "amber": "h1-s1"
+  },
+  "H1-R2": {
+    "amber": "h1-n2",
+    "teal": "h1-s2"
+  },
+  "H2-R1": {
+    "amber": "h2-n1",
+    "teal": "h2-s1"
+  },
+  "H2-R2": {
+    "teal": "h2-n2",
+    "amber": "h2-s2"
+  },
+  "H3-R1": {
+    "teal": "h3-n1",
+    "amber": "h3-s1"
+  },
+  "H3-R2": {
+    "amber": "h3-n2",
+    "teal": "h3-s2"
+  },
+  "H4-R1": {
+    "amber": "h4-n1",
+    "teal": "h4-s1"
+  },
+  "H4-R2": {
+    "teal": "h4-n2",
+    "amber": "h4-s2"
+  }
+}

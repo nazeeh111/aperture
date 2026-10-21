@@ -1,0 +1,100 @@
+{
+  "task": "H2",
+  "candidate": "final-v2/candidate/research/SKILL.md",
+  "start_utc": "2026-10-21 05:29:11 UTC",
+  "clock_start_scope": "Clock sampled immediately after reading the two authorized input files; initial file-read time excluded.",
+  "sources": [
+    {
+      "url": "https://docs.pypi.org/api/json/",
+      "locations": "Get a project; Get a release; Known vulnerabilities",
+      "supports": "latest-only vulnerability field versus release-specific lookup; withdrawn records and aliases"
+    },
+    {
+      "url": "https://docs.pypi.org/api/index-api/",
+      "locations": "Get distributions for project; JSON example filenames, yanked, requires-python",
+      "supports": "JSON index public examples and file withdrawal filtering"
+    },
+    {
+      "url": "https://docs.github.com/en/rest/security-advisories/global-advisories#list-global-security-advisories",
+      "locations": "List global security advisories, authentication, affects, ecosystem, pagination, response schema",
+      "supports": "public unauthenticated query, pip ecosystem, reviewed default, updated/withdrawn fields"
+    },
+    {
+      "url": "https://pypi.org/pypi/Pillow/9.0.0/json",
+      "locations": "vulnerabilities array including PYSEC-2023-227 and other records",
+      "supports": "historical deployed version has vulnerability records and aliases"
+    },
+    {
+      "url": "https://github.com/python-pillow/Pillow/releases",
+      "locations": "Release list; 13.0.0 release notes",
+      "supports": "release announcements as distinct records; no current-version claim required"
+    },
+    {
+      "url": "https://github.com/google/osv.dev/blob/master/docs/api/post-v1-query.md",
+      "locations": "Parameters and Pagination",
+      "supports": "alternative read-only version query considered; not required by selected pilot"
+    }
+  ],
+  "access_errors": [
+    {
+      "surface": "exec_command Python urllib",
+      "urls": [
+        "https://github.com/python-pillow/Pillow/releases.atom",
+        "https://pypi.org/pypi/Pillow/json",
+        "https://pypi.org/simple/pillow/",
+        "https://api.github.com/advisories?ecosystem=pip&affects=Pillow&per_page=100",
+        "https://pypi.org/pypi/Pillow/9.0.0/json"
+      ],
+      "error": "URLError(gaierror(8, 'nodename nor servname provided, or not known'))",
+      "outcome": "No escalation or alternative network configuration attempted"
+    },
+    {
+      "surface": "web",
+      "url": "https://github.com/python-pillow/Pillow/releases.atom",
+      "error": "Failed to fetch: Cache miss"
+    },
+    {
+      "surface": "web",
+      "url": "https://api.github.com/advisories?ecosystem=pip&affects=Pillow&per_page=100",
+      "error": "URL is not accessible via this tool"
+    }
+  ],
+  "checks": {
+    "passed": [
+      "Python 3.14 discovered at /Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "Pilot source compiled in memory",
+      "Stable wheel and sdist fixture matches",
+      "Release-candidate and dev filename fixtures excluded",
+      "Numeric version ordering fixture"
+    ],
+    "failed": [
+      "All direct local network probes"
+    ],
+    "unverified": [
+      "Live end-to-end pilot",
+      "Advisory pagination execution",
+      "Atomic state replacement in actual filesystem",
+      "Failure preserves actual preexisting state",
+      "Unattended daily execution",
+      "Full PEP 440 parsing intentionally excluded"
+    ]
+  },
+  "artifacts": [
+    "answer.md",
+    "evidence.json"
+  ],
+  "unavailable_telemetry": [
+    "Model token counts",
+    "Tool billing/cost",
+    "Server internal metrics",
+    "Exact web network transfer timing"
+  ],
+  "exclusions": [
+    "Initial input-file reading before sampled start",
+    "Final artifact writing and delivery after end clock",
+    "No other local files, history, memories, protocol or sibling outputs read",
+    "No delegation, credentials, accounts, paid APIs, installs, jobs, subscriptions or remote writes"
+  ],
+  "end_utc": "2026-10-21 05:31:18 UTC",
+  "clock_end_scope": "Clock sampled immediately before the final artifact-writing command; filesystem write and delivery excluded."
+}

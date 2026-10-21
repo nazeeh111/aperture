@@ -1,0 +1,55 @@
+{
+  "pair": "H1-R1",
+  "scores": {
+    "amber": {
+      "dimensions": [
+        4,
+        3,
+        3,
+        4,
+        3,
+        4
+      ],
+      "total": 21,
+      "consequential_errors": []
+    },
+    "teal": {
+      "dimensions": [
+        4,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "total": 20,
+      "consequential_errors": []
+    }
+  },
+  "preference": "amber_slight",
+  "checked_advantages": {
+    "amber": [
+      {
+        "benefit": "Explicit corrected/aligned T640 method-code screening",
+        "source": "https://aqs.epa.gov/aqsweb/documents/codetables/methods_criteria.html",
+        "location": "88101 entries 736/738 and 636/638; amber final caution",
+        "why_material": "Provides concrete replacement codes rather than generic method comparability advice; can prevent mixing original and corrected streams. Applicability to chosen Chicago sites remains to be checked, so this is not by itself a material pair win."
+      }
+    ],
+    "teal": [
+      {
+        "benefit": "Runnable size-limit command and explicit smoke-event primary analysis",
+        "source": "https://curl.se/docs/manpage.html",
+        "location": "--max-filesize; teal acquisition steps 3 and 5",
+        "why_material": "The installed curl 8.7.1 supports aborting unknown-length responses; this reduces implementation work. Preserving measured smoke episodes protects the descriptive estimand. Older curl versions need a qualification."
+      }
+    ]
+  },
+  "verification_limits": [
+    "The original workers' UI selector actions and historical access failures cannot be replayed as historical events; reviewer public broker access independently establishes present route feasibility.",
+    "Full PM2.5 advisory PDF web fetch timed out. EPA method table and primary EPA quick-reference search excerpt corroborate corrected/aligned codes; original PDF recommendation wording was not independently extracted.",
+    "No complete Chicago site census, geographic suitability determination, certified completeness, statistical comparison, or new-app export was performed.",
+    "Teal's unconditional unknown-length curl guarantee requires curl >=8.4.0; local installed version meets it.",
+    "Blinding limit: while inspecting the permitted H1-R2 teal evidence.json, I encountered its candidate-path field. The review therefore was not fully blind. I did not open that path, an arm map, other folders, skills, histories or parent hypotheses. This affects all subsequent scoring in this reviewer batch. A sanitized independent crosscheck is appropriate."
+  ]
+}

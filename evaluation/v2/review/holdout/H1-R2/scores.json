@@ -1,0 +1,55 @@
+{
+  "pair": "H1-R2",
+  "scores": {
+    "amber": {
+      "dimensions": [
+        4,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "total": 20,
+      "consequential_errors": []
+    },
+    "teal": {
+      "dimensions": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "total": 24,
+      "consequential_errors": []
+    }
+  },
+  "preference": "teal_material",
+  "checked_advantages": {
+    "amber": [],
+    "teal": [
+      {
+        "benefit": "Demonstrated complete, below-limit acquisition for both target years with actual measured row and stream counts",
+        "source": "https://www3.epa.gov/cgi-bin/broker",
+        "location": "displayed program dataprog.ad_data_daily_airnow_method.sas, site 170310076, years 2023/2024",
+        "why_material": "Reviewer independently reproduced exact worker bytes/hashes, 384/326 rows and 60 regulatory-stream rows per year. This turns an uncompleted manual plan into a working acquisition route and exposes materially different coverage."
+      },
+      {
+        "benefit": "Account-free OpenAQ archive is distinguished from its authenticated API",
+        "source": "https://docs.openaq.org/aws/quick-start",
+        "location": "unsigned --no-sign-request access instructions",
+        "why_material": "Preserves a legitimate free fallback rather than treating API key requirements as excluding all OpenAQ access. Chicago provenance and both-year coverage remain unverified."
+      }
+    ]
+  },
+  "verification_limits": [
+    "The original workers' UI selector actions and historical access failures cannot be replayed as historical events; reviewer public broker access independently establishes present route feasibility.",
+    "Full PM2.5 advisory PDF web fetch timed out. EPA method table and primary EPA quick-reference search excerpt corroborate corrected/aligned codes; original PDF recommendation wording was not independently extracted.",
+    "No complete Chicago site census, geographic suitability determination, certified completeness, statistical comparison, or new-app export was performed.",
+    "EPA retirement notice independently fetched says December 18th but omits the year in its visible notice; 2026 is a contextual inference, not an explicit displayed date.",
+    "H1-R2 teal code demonstrates request/parsing and prints hash, but local archival is left as an explicit subsequent step.",
+    "Blinding limit: while inspecting the permitted H1-R2 teal evidence.json, I encountered its candidate-path field. The review therefore was not fully blind. I did not open that path, an arm map, other folders, skills, histories or parent hypotheses. This affects all subsequent scoring in this reviewer batch. A sanitized independent crosscheck is appropriate."
+  ]
+}

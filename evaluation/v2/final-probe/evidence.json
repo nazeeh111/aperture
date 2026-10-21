@@ -1,0 +1,147 @@
+{
+  "task": "H2 reliable software update watcher",
+  "date": "2026-10-21",
+  "skill": "work/final-v2/final/research/SKILL.md",
+  "first_result": true,
+  "delegation": false,
+  "other_skills_used": false,
+  "memory_used": false,
+  "external_writes": false,
+  "installed_or_scheduled": false,
+  "source_access": [
+    {
+      "url": "https://pillow.readthedocs.io/en/stable/releasenotes/",
+      "method": "web search result",
+      "result": "publisher release index retrieved, lists 13.0.0 dated 2026-10-16"
+    },
+    {
+      "url": "https://docs.pypi.org/api/json/",
+      "method": "web search result",
+      "result": "project releases key deprecated; vulnerabilities apply to specific/latest version"
+    },
+    {
+      "url": "https://docs.pypi.org/api/index-api/",
+      "method": "web open",
+      "result": "index API documentation retrieved; JSON Accept and project endpoint verified"
+    },
+    {
+      "url": "https://pypi.org/simple/pillow/",
+      "method": "web open",
+      "result": "HTML file index retrieved, JSON representation not directly fetched"
+    },
+    {
+      "url": "https://docs.github.com/en/rest/security-advisories/global-advisories",
+      "method": "web open",
+      "result": "public unauthenticated queries, affects, ecosystem pip, reviewed default and pagination documented"
+    },
+    {
+      "url": "https://docs.github.com/en/rest/security-advisories/repository-advisories",
+      "method": "web open",
+      "result": "repository list endpoint documentation retrieved"
+    },
+    {
+      "url": "https://github.com/python-pillow/Pillow/security/advisories",
+      "method": "web open",
+      "result": "repository advisory listing retrieved, October 2026 publications visible"
+    },
+    {
+      "url": "https://github.com/python-pillow/Pillow/security/advisories/GHSA-654x-cwwv-5j9c",
+      "method": "web open",
+      "result": "original advisory retrieved: published October 19 2026, versions 11.2.1 through 13.0.0, patched versions None, alignment and Arrow export conditions"
+    },
+    {
+      "url": "https://github.com/python-pillow/Pillow/releases/tag/13.0.0",
+      "method": "web open",
+      "result": "release original retrieved: October 16 22:37, latest marker"
+    },
+    {
+      "url": "https://google.github.io/osv.dev/post-v1-query/",
+      "method": "web open",
+      "result": "query fields and next_page_token pagination retrieved; no actual POST performed"
+    },
+    {
+      "url": "https://google.github.io/osv.dev/data/",
+      "method": "web open",
+      "result": "data source list retrieved including GitHub and PyPI advisory database"
+    },
+    {
+      "url": "https://pillow.readthedocs.io/en/stable/handbook/security.html",
+      "method": "web search result",
+      "result": "publisher guidance retrieved including bundled C library dependencies"
+    },
+    {
+      "url": "https://github.com/python-pillow/Pillow/releases.atom",
+      "method": "web open",
+      "result": "failed cache miss"
+    },
+    {
+      "url": "https://api.github.com/repos/python-pillow/Pillow/releases?per_page=10",
+      "method": "web open",
+      "result": "tool reported URL inaccessible"
+    },
+    {
+      "url": "https://api.github.com/advisories?ecosystem=pip&affects=Pillow&per_page=100",
+      "method": "web open",
+      "result": "tool reported URL inaccessible"
+    }
+  ],
+  "local_network_check": {
+    "method": "Python urllib.request.urlopen timeout=30",
+    "urls": [
+      "https://github.com/python-pillow/Pillow/releases.atom",
+      "https://pypi.org/simple/pillow/",
+      "https://pypi.org/pypi/Pillow/10.2.0/json",
+      "https://api.github.com/advisories?ecosystem=pip&affects=Pillow&per_page=100"
+    ],
+    "result": "all failed URLError Errno 8 nodename nor servname provided, or not known",
+    "http_statuses_observed": []
+  },
+  "concrete_checks": [
+    {
+      "check": "compile and execute exact embedded example functions with __name__=fixture",
+      "result": "passed"
+    },
+    {
+      "check": "numeric ordering 10.0.0 over 9.9.0",
+      "result": "passed synthetic fixture"
+    },
+    {
+      "check": "exclude 11.0.0rc1 prerelease",
+      "result": "passed synthetic fixture"
+    },
+    {
+      "check": "exclude fully yanked 12.0.0 from latest but retain unavailable status",
+      "result": "passed synthetic fixture"
+    },
+    {
+      "check": "retain 10.0.0 with mixed yanked/non-yanked files",
+      "result": "passed synthetic fixture"
+    },
+    {
+      "check": "two-page GitHub Link next traversal",
+      "result": "passed synthetic fixture with fake fetch; no HTTP"
+    },
+    {
+      "check": "prose word budget",
+      "result": "415 whitespace words after removing fenced examples; max 650"
+    },
+    {
+      "check": "end-to-end live pilot",
+      "result": "unavailable; DNS failed"
+    },
+    {
+      "check": "daily execution, notifications, full advisory coverage",
+      "result": "not tested or established"
+    }
+  ],
+  "telemetry": null,
+  "telemetry_note": "No model runtime/token instrumentation available. No invented telemetry.",
+  "limits": [
+    "Atom content not retrieved",
+    "JSON API response bodies not retrieved",
+    "GitHub global versus repository coverage not empirically measured",
+    "Actual OSV POST not performed",
+    "Only synthetic filtering/pagination checks ran",
+    "No complete daily service installed; manual pilot delivered"
+  ]
+}

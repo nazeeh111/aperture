@@ -1,0 +1,94 @@
+{
+  "task": "H3",
+  "clock_start_utc": "2026-10-21 05:37:07 UTC",
+  "clock_end_utc": "2026-10-21 05:38:19 UTC",
+  "clock_exclusions": [
+    "Final artifact writing after end clock",
+    "Final response delivery"
+  ],
+  "artifacts": [
+    "answer.md",
+    "evidence.json"
+  ],
+  "decisive_sources": [
+    {
+      "url": "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+      "supports": "Search pagination maximum 300; search versus authenticated download workflow"
+    },
+    {
+      "url": "https://techdocs.gbif.org/en/openapi/",
+      "supports": "Most API use needs no authentication; ranges and offsets"
+    },
+    {
+      "url": "https://gbif.github.io/gbif-api/apidocs/org/gbif/api/model/occurrence/search/OccurrenceSearchParameter.html",
+      "supports": "Coordinate ranges, mediaType, uncertainty and geospatial filters"
+    },
+    {
+      "url": "https://www.xerces.org/sites/default/files/publications/10-014.pdf",
+      "supports": "Bombus impatiens listed as native bee with eastern US range"
+    },
+    {
+      "url": "https://help.inaturalist.org/en/support/solutions/articles/151000169938-what-is-geoprivacy-what-does-it-mean-for-an-observation-to-be-obscured-",
+      "supports": "Obscuration randomizes public coordinates; private observations excluded from place searches"
+    },
+    {
+      "url": "https://techdocs.gbif.org/en/data-processing/taxonomy-interpretation",
+      "supports": "Documented occurrence response example key5104646682 HUMAN_OBSERVATION PRESENT; Acacia not bee"
+    },
+    {
+      "url": "https://docs.gbif.org/freshwater-data-publishing-guide/en/",
+      "supports": "Opportunistic observations indicate presence; counts not reliable abundance without planned effort"
+    },
+    {
+      "url": "https://techdocs.gbif.org/en/openapi/images",
+      "supports": "Photograph licensing differs from occurrence data"
+    }
+  ],
+  "access_errors": [
+    {
+      "location": "https://api.gbif.org/v1/species/match?name=Bombus%20impatiens",
+      "tool": "exec_command Python urllib",
+      "error": "DNS resolution socket.gaierror Errno8; request unsuccessful"
+    },
+    {
+      "location": "https://api.gbif.org/v1/species/match?name=Bombus%20impatiens",
+      "tool": "web open",
+      "error": "URL not accessible via tool"
+    },
+    {
+      "location": "https://api.inaturalist.org/v1/observations?taxon_name=Bombus%20impatiens&nelat=37.30&nelng=-80.35&swlat=37.18&swlng=-80.50&photos=true&quality_grade=research&per_page=1",
+      "tool": "web open",
+      "error": "URL not accessible via tool"
+    },
+    {
+      "location": "https://www.gbif.org/dataset/50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+      "tool": "web open",
+      "error": "HTTP403 Forbidden"
+    },
+    {
+      "tool": "functions.exec",
+      "error": "One orchestration call rejected for JavaScript syntax error before execution; corrected next call"
+    }
+  ],
+  "verification": {
+    "live_local_record": "Unavailable",
+    "local_record_count": "Unavailable",
+    "script_execution": "Not run successfully; provided reproduction recipe",
+    "map_render": "Not performed",
+    "documented_response": "Verified in official documentation; explicitly nonlocal non-bee structural example"
+  },
+  "unavailable_telemetry": [
+    "Token usage",
+    "model internal effort measurements",
+    "network service health beyond tool errors",
+    "API rate-limit headers"
+  ],
+  "scope_exclusions": [
+    "No credentials, accounts, paid APIs, installs, uploads or remote writes",
+    "No observer contact or field-location access",
+    "No sensitive-coordinate reconstruction",
+    "No other local files, memories, history, protocol or sibling outputs read",
+    "No delegation",
+    "No claim of comprehensive native-bee inventory or absence"
+  ]
+}

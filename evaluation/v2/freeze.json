@@ -1,0 +1,22 @@
+{
+  "cases": [
+    "D1",
+    "D2",
+    "H1",
+    "H2",
+    "H3",
+    "H4"
+  ],
+  "files": {
+    "PROTOCOL.md": "81c3841fe90b87a542a28c8f03dcfd1f6fc4e1303e6232a4987cade9929831a7",
+    "holdout/H1.md": "2543d168dfe714aad1aa12b52bfc4086bb0787aec46b32a8564d59c834e8a7fa",
+    "holdout/H4.md": "bed703d464affb56b7629d72c209dac2e2aad28862f4ce543766fc182586e32a",
+    "holdout/H3.md": "5533dbab1824cad85f4878e1f88d3f8da11c8ef101565232241866d73bc67fa5",
+    "holdout/H2.md": "c422e32c7ffbae11b5fbbfbbdad51bdfb0910e0960437acf476d9d675426489f",
+    "development/D2.md": "299d43c36fe25e8f1f250c259ea26e4fe0e3f9dce1394df3862e92ca58c3f3cd",
+    "development/D1.md": "1f09bcd698e7194f3087d30184238d64274bcc6ed984afb40f6ed4949868e246",
+    "baseline/research/SKILL.md": "a460ca58f1525b788cdb39f75cfec47e86f856665d9b542439bc28545c558263",
+    "baseline/research/agents/openai.yaml": "46fe171b93e31a4587e332c29ba881564b0b313cb41d6d7c2b5e82383f0cfe07",
+    "baseline/research/scripts/snapshot_github.py": "fd018f824d66fcf0b2ddac97dca9ea76f95c6758510d96ba78e0ad78fddd0b43"
+  }
+}

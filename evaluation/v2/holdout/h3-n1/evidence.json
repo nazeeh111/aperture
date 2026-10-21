@@ -1,0 +1,27 @@
+{
+  "clock_start_utc": "2026-10-21 05:29:48 UTC",
+  "clock_end_utc": "2026-10-21 05:30:53 UTC",
+  "clock_exclusions": "End clock taken immediately before final artifact write. File writing and final response excluded; all reading and web research included.",
+  "brief_read": "[task workspace]/holdout/H3.md",
+  "decisive_sources": [
+    {"url":"https://help.inaturalist.org/en/support/solutions/articles/151000170342-how-can-i-download-data-from-inaturalist-", "supports":"Website CSV export requires account"},
+    {"url":"https://api.inaturalist.org/v1/docs/", "supports":"Official v1 API documentation location; page returned zero textual lines, full parameters not verified"},
+    {"url":"https://ext.vt.edu/content/dam/pubs_ext_vt_edu/ENTO/ENTO-151/ENTO-424.pdf", "supports":"Virginia native bees educational reference including Xylocopa virginica"},
+    {"url":"https://www.xerces.org/sites/default/files/2018-05/12-052_01_Eastern_Bumble_Bee.pdf", "supports":"Bombus impatiens regional identification and phenology; regional native-range inference, not complete local native checklist"},
+    {"url":"https://help.inaturalist.org/en/support/solutions/articles/151000169938-what-is-geoprivacy-what-does-it-mean-for-an-observation-to-be-obscured-", "supports":"Randomized obscured coordinates, private observations absent from place search; lines 21-39"},
+    {"url":"https://help.inaturalist.org/en/support/solutions/articles/151000175695", "supports":"Separate observation/photo licensing"},
+    {"url":"https://github.com/inaturalist/inaturalist/blob/main/public/api.html", "supports":"Legacy documented JSON response example id 2281; example is gray wolf outside scope and explicitly rejected"},
+    {"url":"https://www.inaturalist.org/posts/72893-fields-table", "supports":"Anthophila taxon_id 630955"},
+    {"url":"https://techdocs.gbif.org/en/openapi/v1/occurrence", "supports":"Alternative occurrence API, public search pagination documentation; not selected final route"}
+  ],
+  "access_errors": [
+    {"url":"https://api.inaturalist.org/v1/observations?taxon_id=630955&lat=37.2296&lng=-80.4139&radius=15&photos=true&quality_grade=research&per_page=1", "error":"web tool: URL not accessible; urllib: URLError nodename nor servname provided, or not known"},
+    {"url":"https://api.gbif.org/v1/occurrence/search?scientificName=Bombus%20impatiens&decimalLatitude=37.1,37.4&decimalLongitude=-80.6,-80.2&mediaType=StillImage&limit=1", "error":"web tool: URL not accessible"},
+    {"url":"https://api.inaturalist.org/v1/observations?taxon_id=118599&per_page=1", "error":"web tool: URL not accessible"},
+    {"url":"https://www.inaturalist.org/observations/99016835", "error":"web tool: URL not accessible"}
+  ],
+  "artifacts": ["answer.md", "evidence.json"],
+  "verification": "Documentation and documented response example read. No successful local occurrence retrieval, count, map rendering, QGIS execution or current-source visual verification. Recipe remains unexecuted.",
+  "unavailable_telemetry": ["token usage", "model internal compute", "API server timing", "complete external request timing"],
+  "scope_exclusions": ["No other local files/history/memories/protocol/sibling outputs read", "No delegation", "No optional skills", "No accounts or credentials", "No paid APIs or installs", "No remote writes", "No observer contact", "No field-location access", "No sensitive-coordinate reconstruction"]
+}

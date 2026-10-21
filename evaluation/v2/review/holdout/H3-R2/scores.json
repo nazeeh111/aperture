@@ -1,0 +1,53 @@
+{
+  "pair": "H3-R2",
+  "scores": {
+    "amber": {
+      "dimensions": [
+        4,
+        4,
+        3,
+        4,
+        4,
+        3
+      ],
+      "total": 22,
+      "consequential_errors": []
+    },
+    "teal": {
+      "dimensions": [
+        4,
+        4,
+        3,
+        4,
+        3,
+        4
+      ],
+      "total": 22,
+      "consequential_errors": []
+    }
+  },
+  "preference": "amber_material",
+  "checked_advantages": {
+    "amber": [
+      {
+        "benefit": "Offers a standard-library route that actually generates a printable map, rather than requiring a separate GIS workflow.",
+        "source": "Local offline execution of unchanged Python fence in amber/answer.md; GBIF parameter documentation https://gbif.github.io/gbif-api/apidocs/org/gbif/api/model/occurrence/search/OccurrenceSearchParameter.html",
+        "location": "Python fence URL/query, uncertainty/generalization screening, SVG writer; docs HAS_GEOSPATIAL_ISSUE and MEDIA_TYPE",
+        "why_material": "With a synthetic documented-shape response, execution wrote parseable map.svg and records.csv, collapsed a duplicate occurrenceID, and excluded a generalized record. This removes several GIS setup/import/grid/layout operations for the small public-learning task. This is a material operating-work benefit, not live record verification."
+      }
+    ],
+    "teal": [
+      {
+        "benefit": "Preserves raw response provenance and applies explicit downstream privacy, photo, license and accuracy screening.",
+        "source": "Local offline execution of unchanged Python fence in teal/answer.md; official API source https://raw.githubusercontent.com/inaturalist/iNaturalistAPI/main/lib/views/swagger_v1.yml.ejs",
+        "location": "Python fence response-page JSON saving, rows keyed by ID, rejection predicate",
+        "why_material": "Fixture run retained the valid observation, rejected unknown accuracy and obscured records, wrote bees.csv and response-1.json. The saved query/body makes later auditing easier than amber's link-only CSV; a useful offset but does not itself produce a map."
+      }
+    ]
+  },
+  "verification_limits": [
+    "Live API reads failed independently through both web and local urllib: web reported inaccessible URLs; urllib reported Errno 8 DNS resolution failures. This corroborates present environment limitations, not an exact historical tool trace or worldwide API outage.",
+    "No live regional harvest, QGIS execution, PDF rendering, scheduler, literature recall or deduplication accuracy measurement was possible. Recommendations and synthetic fixture checks are distinct from successful real-data operation.",
+    "Only assigned packets and protocol were inspected. Original answers and evidence were preserved. No accounts, installs, credentials, remote writes, other reviews or arm identity information were used."
+  ]
+}

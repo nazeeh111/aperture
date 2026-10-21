@@ -1,0 +1,111 @@
+{
+  "clock_start_utc": "2026-10-21 05:21:27 UTC",
+  "clock_end_utc": "2026-10-21 05:23:00 UTC",
+  "method": "Native web tool research of primary documentation and project repositories; recommendation inferred from documented constraints. No installs, device access or runtime rehearsal.",
+  "primary_urls_opened": [
+    {
+      "url": "https://github.com/Catfriend1/syncthing-android",
+      "resolved_url": "https://github.com/researchxxl/syncthing-android",
+      "location": "README lines 225-249",
+      "finding": "Community wrapper, distribution via releases/F-Droid, former maintainers acknowledged."
+    },
+    {
+      "url": "https://github.com/researchxxl/syncthing-android/releases",
+      "location": "lines 175-264",
+      "finding": "v2.1.7.0-rc.4 released Oct 14; stable v2.1.6.0 labelled Latest, Oct 6; network/storage permission changes."
+    },
+    {
+      "url": "https://github.com/syncthing/syncthing-android",
+      "location": "repository archive banner and discontinued README; search result also reports Dec 3 2024 archive",
+      "finding": "Official Android wrapper discontinued."
+    },
+    {
+      "url": "https://docs.syncthing.net/users/versioning.html",
+      "location": "lines 2-13",
+      "finding": "Disabled by default, incoming changes only, per-device configuration, Simple keep-count retention."
+    },
+    {
+      "url": "https://docs.syncthing.net/users/syncing.html",
+      "location": "lines 20-28",
+      "finding": "Conflict copies propagate; case sensitivity constraints."
+    },
+    {
+      "url": "https://docs.syncthing.net/intro/getting-started.html",
+      "location": "lines 37-44",
+      "finding": "Mutual device IDs establish connection."
+    },
+    {
+      "url": "https://docs.syncthing.net/users/faq.html",
+      "location": "lines 79-81",
+      "finding": "Changes including deletion replicate when devices are online together."
+    },
+    {
+      "url": "https://github.com/Vinzent03/obsidian-git",
+      "location": "README lines 311-333",
+      "finding": "Mobile discouraged, unstable implementation, no SSH, memory limits."
+    },
+    {
+      "url": "https://git-scm.com/docs/git-bundle",
+      "location": "lines 218-228",
+      "finding": "Offline transport and full/incremental repository backups, clone/fetch from bundle."
+    },
+    {
+      "url": "https://git-scm.com/docs/git-restore",
+      "location": "lines 212-226",
+      "finding": "Restore paths from a chosen commit."
+    },
+    {
+      "url": "https://github.com/termux/termux-app",
+      "location": "repository page",
+      "finding": "Exploratory source; not used for final recommendation."
+    },
+    {
+      "url": "https://github.com/localsend/localsend",
+      "location": "README lines 264-302",
+      "finding": "Direct DMG/APK distribution, no automatic updater, Android 7/macOS 11, firewall/AP isolation constraints."
+    },
+    {
+      "url": "https://github.com/localsend/localsend/releases/latest",
+      "resolved_url": "https://github.com/localsend/localsend/releases/tag/v1.18.2",
+      "location": "release title",
+      "finding": "Current latest release v1.18.2."
+    },
+    {
+      "url": "https://localsend.org",
+      "location": "lines 33-64 and 112-114",
+      "finding": "Android/macOS, local network transfer without internet, accounts or servers."
+    },
+    {
+      "url": "https://github.com/syncthing/syncthing-macos",
+      "location": "README lines 225-227, 243-245, 267-275",
+      "finding": "Supported v2 macOS 12 requirement; older installation sentence inconsistently says 11."
+    },
+    {
+      "url": "https://github.com/researchxxl/syncthing-android/wiki",
+      "resolved_url": "https://github.com/researchxxl/syncthing-android",
+      "location": "redirect",
+      "finding": "Wiki URL redirected to repository."
+    },
+    {
+      "url": "https://github.com/researchxxl/syncthing-android/tree/main/wiki",
+      "location": "directory page",
+      "finding": "Page opened, no decisive detailed Android operation documentation extracted."
+    }
+  ],
+  "access_failures": [
+    {
+      "url": "https://github.com/VictorNine/obsidian-git",
+      "failure": "Cache miss from web tool; incorrect exploratory repository URL, subsequently used Vinzent03 primary repository."
+    },
+    {
+      "location": "Syncthing-Fork README knowledge-base link 104",
+      "failure": "Click returned Internal Error; no documentation claims attributed to inaccessible link."
+    },
+    {
+      "location": "GitHub release pages",
+      "failure": "Some assets/tag widgets reported loading errors; release titles and notes readable, no assets downloaded."
+    }
+  ],
+  "telemetry": "Unavailable: token, cost and full execution telemetry. This file is a source/evidence summary, not a complete tool trace.",
+  "runtime_verification": "Not performed; proposed rehearsal only."
+}

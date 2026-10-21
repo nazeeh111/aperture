@@ -1,0 +1,74 @@
+{
+  "clock_start_utc": "2026-10-21 05:27:24 UTC",
+  "decisive_sources": [
+    {
+      "url": "https://www.epa.gov/outdoor-air-quality-data/download-daily-data",
+      "support": "Public form loaded in IAB; PM2.5, 2024, Illinois, site 170310001 selected; Get Data returned Download CSV link and ten-minute expiry notice."
+    },
+    {
+      "url": "https://docs.openaq.org/using-the-api/quick-start",
+      "support": "API key signup and X-API-Key required."
+    },
+    {
+      "url": "https://docs.openaq.org/about/about",
+      "support": "v1/v2 retired HTTP410."
+    },
+    {
+      "url": "https://open-meteo.com/en/docs/air-quality-api",
+      "support": "CAMS model sources and global approximate 45km resolution."
+    },
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/download_files.html",
+      "support": "2023 daily_88101 ZIP 9687KB; 2024 8209KB, exceeds permitted download size."
+    },
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/FileFormats.html",
+      "locations": "Sections 1.1,1.2,3.2,5.1,5.2; lines 32-55,112-150,224-274",
+      "support": "Monitor identity, duplicate summaries, daily standard-time dates, units, event variants, documented example schema."
+    }
+  ],
+  "access_errors": [
+    {
+      "tool": "web open",
+      "url": "https://www.epa.gov/outdoor-air-quality-data/frequent-questions-about-airdata",
+      "error": "502 Bad Gateway"
+    },
+    {
+      "tool": "curl",
+      "url": "https://www.epa.gov/outdoor-air-quality-data/download-daily-data",
+      "error": "No stdout from capped request piped to rg; underlying curl status masked by pipeline, no success inferred."
+    },
+    {
+      "tool": "web open",
+      "url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_server=134.67.99.91&_port=4085&_sessionid=6yEcgAUOT52&_PROGRAM=dataprog.ad_viz_plotval_getdata.sas",
+      "error": "Not accessible via this tool"
+    },
+    {
+      "tool": "curl",
+      "url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_server=134.67.99.91&_port=4085&_sessionid=6yEcgAUOT52&_PROGRAM=dataprog.ad_viz_plotval_getdata.sas",
+      "error": "Exit6 Could not resolve host www3.epa.gov; max-filesize1048575"
+    }
+  ],
+  "artifacts": [
+    "answer.md",
+    "evidence.json"
+  ],
+  "downloads_saved": [],
+  "limitations": [
+    "No actual Chicago measurement record retrieved; official schema example fulfills example option.",
+    "No 2023 query executed; listed live year option observed.",
+    "No quantitative comparison, neighborhood mapping, method continuity, certification or completeness verified.",
+    "Acquisition size-cap command provided as plan, not successful tested data transfer."
+  ],
+  "unavailable_telemetry": [
+    "Token usage",
+    "billing telemetry",
+    "network transfer byte totals for web and browser tools"
+  ],
+  "exclusions": [
+    "No optional skills, other local files, histories or memories read.",
+    "No delegation, accounts, credential work, installations, paid APIs or remote writes.",
+    "Clock excludes final file-write execution and final handoff message."
+  ],
+  "clock_end_utc": "2026-10-21 05:29:16 UTC"
+}

@@ -1,0 +1,129 @@
+{
+  "clock_start_utc": "2026-10-21 05:21:19 UTC",
+  "clock_end_utc": "2026-10-21 05:25:23 UTC",
+  "telemetry": "Unavailable: token counts, complete tool trace, and tool-internal network transfer logs. This file is a selected evidence record, not a complete trace.",
+  "primary_sources_opened_successfully": [
+    {
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "decisive_location": "Lines 245-256: educational public exhibit and web use, source credit, third-party exception; explored alternative not selected."
+    },
+    {
+      "url": "https://science.nasa.gov/resource/apollo-8s-iconic-earthrise/",
+      "decisive_location": "Lines 288-318: credit, historical date, downloads; not selected."
+    },
+    {
+      "url": "https://science.nasa.gov/resource/the-blue-marble/",
+      "decisive_location": "Lines 237-253: date, AS17-148-22727, credit; not selected."
+    },
+    {
+      "url": "https://science.nasa.gov/photojournal/jupiter-great-red-spot-mosaic/",
+      "decisive_location": "Lines 239-283: PIA00022, credit, TIFF listing; not selected."
+    },
+    {
+      "url": "https://www.nasa.gov/image-article/apollo-17-blue-marble/",
+      "decisive_location": "Alternative individual image page; not selected."
+    },
+    {
+      "url": "https://photojournal.jpl.nasa.gov/catalog/PIA00022",
+      "decisive_location": "Redirected to NASA Science record above."
+    }
+  ],
+  "primary_records_retrieved_via_search": [
+    {
+      "url": "https://www.loc.gov/pictures/item/2002695396/",
+      "decisive_location": "Individual record: Title, Creator(s), Date Created/Published, Rights Advisory, Reproduction Number, TIFF download listing. Cassiopeia and Taurus returns included exact download_links; Ursa URL derived from documented cph.3g10058 and matching convention.",
+      "live_reopen": "403 Forbidden",
+      "rights_text_paraphrase": "LOC reports no known U.S. publication restrictions; use elsewhere may be restricted by foreign laws."
+    },
+    {
+      "url": "https://www.loc.gov/pictures/item/2002695502/",
+      "decisive_location": "Individual record: Title, Creator(s), Date Created/Published, Rights Advisory, Reproduction Number, TIFF download listing. Cassiopeia and Taurus returns included exact download_links; Ursa URL derived from documented cph.3g10058 and matching convention.",
+      "live_reopen": "403 Forbidden",
+      "rights_text_paraphrase": "LOC reports no known U.S. publication restrictions; use elsewhere may be restricted by foreign laws."
+    },
+    {
+      "url": "https://www.loc.gov/pictures/item/2002695510/",
+      "decisive_location": "Individual record: Title, Creator(s), Date Created/Published, Rights Advisory, Reproduction Number, TIFF download listing. Cassiopeia and Taurus returns included exact download_links; Ursa URL derived from documented cph.3g10058 and matching convention.",
+      "live_reopen": "403 Forbidden",
+      "rights_text_paraphrase": "LOC reports no known U.S. publication restrictions; use elsewhere may be restricted by foreign laws."
+    },
+    {
+      "url": "https://www.si.edu/object/photograph-moon%3Anmah_1184258",
+      "decisive_location": "Image: Usage Conditions Apply; Metadata Usage: CC0; Record ID nmah_1184258."
+    },
+    {
+      "url": "https://www.si.edu/termsofuse",
+      "decisive_location": "Section 2a CC0 and 2b Other Content: Usage Conditions Apply; obtained in primary-source search return; direct open gave 404."
+    },
+    {
+      "url": "https://www.si.edu/openaccess/faq",
+      "decisive_location": "How can I use content NOT designated as CC0?; metadata/media distinction; obtained in search return; direct open gave 404."
+    },
+    {
+      "url": "https://guides.loc.gov/p-and-p-rights-and-restrictions/",
+      "decisive_location": "Item-specific Rights Advisory guidance, rights not evaluated does not establish permission."
+    }
+  ],
+  "access_failures": [
+    {
+      "url": "https://www.loc.gov/item/2018694899/",
+      "error": "403 Forbidden"
+    },
+    {
+      "url": "https://www.loc.gov/pictures/item/2002695396/",
+      "error": "403 Forbidden"
+    },
+    {
+      "url": "https://www.loc.gov/pictures/item/2002695502/",
+      "error": "403 Forbidden"
+    },
+    {
+      "url": "https://www.loc.gov/pictures/item/2002695510/",
+      "error": "403 Forbidden"
+    },
+    {
+      "url": "https://www.nypl.org/events/exhibitions/galleries/explorations/item/5388",
+      "error": "403 Forbidden"
+    },
+    {
+      "url": "https://www.si.edu/object/photograph-moon%3Anmah_1184258",
+      "error": "Cache miss, including colon-form reopen"
+    },
+    {
+      "url": "https://www.si.edu/termsofuse",
+      "error": "404 direct open"
+    },
+    {
+      "url": "https://www.si.edu/openaccess/faq",
+      "error": "404 direct open"
+    },
+    {
+      "url": "https://images-api.nasa.gov/search?nasa_id=as08-14-2383",
+      "error": "Not accessible via web tool"
+    },
+    {
+      "url": "https://images-api.nasa.gov/search?q=blue%20marble&media_type=image",
+      "error": "Not accessible via web tool"
+    },
+    {
+      "url": "https://science.nasa.gov/wp-json/wp/v2/resource?slug=apollo-8s-iconic-earthrise",
+      "error": "Not accessible via web tool"
+    },
+    {
+      "url": "NASA Science Earthrise, Blue Marble and Jupiter mosaic HTML URLs listed above",
+      "error": "Shell urllib DNS failure: nodename nor servname provided, or not known; no binary requests."
+    },
+    {
+      "url": "https://eol.jsc.nasa.gov/Collections/EarthFromSpace/images.pl?photo=AS17-148-22727",
+      "error": "Open response retained only as short internal tool value; not inspected for decisive claims. Search return listed dimensions; alternative not selected."
+    }
+  ],
+  "verification_limits": [
+    "No binary download or image decoding",
+    "No live pixel dimensions for selected images",
+    "No HEAD checks",
+    "Rights based on indexed source returns, some crawled 3-5 months earlier",
+    "Ursa Major TIFF URL inferred, not independently retrieved",
+    "No account, remote write, credential work or paid service used"
+  ]
+}

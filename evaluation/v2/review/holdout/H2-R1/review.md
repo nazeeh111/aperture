@@ -1,0 +1,15 @@
+# H2-R1 independent review
+
+Preference: **teal_slight**. Scores in rubric order: amber [4, 4, 3, 3, 3, 3] = 20/24; teal [4, 4, 3, 3, 4, 4] = 22/24.
+
+Teal is slightly preferable for implemented complete-release tracking and deployed-version checking. I do not call it an unqualified material win because amber explicitly supplies an upstream-inspection fallback which matters with today's records, while teal's reviewed-only automated source misses those records. Neither source should be described as complete.
+
+Independent execution: extracted each original Python block without edits, compiled it, and ran it twice in disposable local directories against anonymous live public endpoints. All four pilots exited 0 twice. Also ran controlled standard-library URL-response fixtures: first baseline, unchanged repeat, newly added 11.3.1 while 12.0.0 remains latest, then simulated network failure. All fail visibly; stateful pilots place replacement after successful collection. These are reviewer checks, not reliance on worker-reported tests. No scheduler, installs, accounts, credentials or remote writes.
+
+Actual live behavior: amber printed its baseline and then No change; teal printed baseline, then no new releases/changed advisories while continuing known vulnerabilities for supplied 9.0.0. Both persisted local state. The synthetic older-branch patch was silently missed by amber and reported by teal. PyPI's Index API documents versions/files and recommends JSON; GitHub documents anonymous global reads and the affects filter (https://docs.github.com/en/rest/security-advisories/global-advisories).
+
+Independent same-session public reads returned 86 reviewed global records and 61 upstream records, with 29 shared GHSA IDs, 57 global-only and 32 repository-only. Counts are a dated snapshot, not independent vulnerability counts: duplicates and shared CVEs require consolidation. The global-only active GHSA-44wm-f244-xhp3 (CVE-2024-28219, affected <10.3.0) was verified at https://github.com/advisories/GHSA-44wm-f244-xhp3. Upstream-only GHSA-78g4-xqwv-q3g8, published October 17, 2026, affects 11.1.0–12.3.0 and names 13.0.0 as patched; verified at https://github.com/python-pillow/Pillow/security/advisories/GHSA-78g4-xqwv-q3g8. This checks publication and source coverage, not exploitation or vulnerability reproduction.
+
+Amber's whole-record digest is robust for advisory edits, but its changed output prints digest/URL rather than affected/fixed ranges. Teal selects update metadata, relying on the service updating timestamps; that is a reasonable declared contract rather than proof of every imaginable edit. These are working local pilots; production staleness/backoff remains design guidance.
+
+Blinding limit: while inspecting the permitted H1-R2 teal evidence.json, I encountered its candidate-path field. The review therefore was not fully blind. I did not open that path, an arm map, other folders, skills, histories or parent hypotheses. This affects all subsequent scoring in this reviewer batch. A sanitized independent crosscheck is appropriate.

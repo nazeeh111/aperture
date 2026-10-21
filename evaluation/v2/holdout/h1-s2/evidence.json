@@ -1,0 +1,189 @@
+{
+  "task": "H1 measured air quality archive",
+  "candidate": "final-v2/candidate/research/SKILL.md",
+  "clock_start": "2026-10-21 05:31:52 UTC",
+  "clock_end": "2026-10-21 05:36:35 UTC",
+  "timing_exclusions": [
+    "Final artifact serialization, filesystem write, and final handoff occur after end clock.",
+    "No token counts, model-internal timing, or per-tool billing telemetry available."
+  ],
+  "sources": [
+    {
+      "url": "https://www.epa.gov/outdoor-air-quality-data/download-daily-data",
+      "locations": [
+        "public form HTML: .form serialization and dataprog.ad_data_daily_airnow_method.sas call",
+        "ad_load_polls.sas PM2.5 option value 88101','88502",
+        "browser result: generated CSV link expires in ten minutes"
+      ],
+      "supports": [
+        "no-account site-year query",
+        "request parameters"
+      ]
+    },
+    {
+      "url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_debug=0&_program=dataprog.ad_data_daily_airnow_method.sas&poll=88101%27%2C%2788502&year=2023&state=17&cbsa=-1&county=-1&site=170310076",
+      "locations": [
+        "CSV header, first data row, all rows counted and grouped by POC/Method Code/AQS Parameter Code"
+      ],
+      "bytes": 113895,
+      "sha256": "1ebcaa5ee9c59358f90a8072f4f510ea59779b48ee83cc42cfad5792a57fbfa2",
+      "rows": 384,
+      "streams": {
+        "1/545/88101": 60,
+        "3/731/88502": 324
+      },
+      "distinct_dates": 330,
+      "supports": [
+        "actual measured record",
+        "size constraint",
+        "mixed streams"
+      ]
+    },
+    {
+      "url": "https://www3.epa.gov/cgi-bin/broker?_service=data&_debug=0&_program=dataprog.ad_data_daily_airnow_method.sas&poll=88101%27%2C%2788502&year=2024&state=17&cbsa=-1&county=-1&site=170310076",
+      "locations": [
+        "CSV header, first data row, all rows counted and grouped"
+      ],
+      "bytes": 96622,
+      "sha256": "c0b22de91ca4a0f824487e64756857546a63fbf093715b7b97859b46999221da",
+      "rows": 326,
+      "streams": {
+        "1/545/88101": 60,
+        "3/731/88502": 266
+      },
+      "distinct_dates": 281
+    },
+    {
+      "url": "https://open-meteo.com/en/docs/air-quality-api",
+      "locations": [
+        "Data Sources, lines 273-282"
+      ],
+      "supports": [
+        "CAMS model provenance",
+        "global 45 km product"
+      ]
+    },
+    {
+      "url": "https://docs.openaq.org/using-the-api/api-key",
+      "locations": [
+        "API key documentation"
+      ],
+      "supports": [
+        "API authentication requirement"
+      ]
+    },
+    {
+      "url": "https://docs.openaq.org/aws/quick-start",
+      "locations": [
+        "step 3 --no-sign-request"
+      ],
+      "supports": [
+        "account-free archive alternative"
+      ]
+    },
+    {
+      "url": "https://docs.openaq.org/aws/about",
+      "locations": [
+        "File structure lines 179-198; bucket structure lines 120-141"
+      ],
+      "supports": [
+        "daily location archive file schema and layout"
+      ]
+    },
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/download_files.html",
+      "locations": [
+        "particulate columns 88101 and 88502"
+      ],
+      "supports": [
+        "regulatory method category separation"
+      ]
+    },
+    {
+      "url": "https://www.epa.gov/outdoor-air-quality-data/about-airdata-reports",
+      "locations": [
+        "Monitor Values Report: POC, site identifier, exceptional events; PM2.5 daily values and operating schedules"
+      ],
+      "supports": [
+        "comparison cautions"
+      ]
+    },
+    {
+      "url": "https://aqs.epa.gov/aqsweb/airdata/Data_Advisory_PM25_88101_Pregen_Files.pdf",
+      "locations": [
+        "search-index excerpt: Posted Aug 26 2024; retroactive T640/T640X update and changed method codes"
+      ],
+      "supports": [
+        "need to inspect correction status"
+      ],
+      "qualification": "PDF bytes retrieved (165093), but full text extraction unavailable; no Chicago applicability established."
+    },
+    {
+      "url": "https://www.epa.gov/outdoor-air-quality-data/legacy-airdata-tools-and-reports",
+      "locations": [
+        "Transition to New AirData App; updated Oct 7 2026"
+      ],
+      "supports": [
+        "December 18 legacy retirement",
+        "replacement workflow not tested"
+      ]
+    },
+    {
+      "url": "https://epa.illinois.gov/content/dam/soi/en/web/epa/topics/air-quality/air-quality-reports/documents/air-quality-report-2010.pdf",
+      "locations": [
+        "search-index site table"
+      ],
+      "supports": [
+        "geographic countercheck: 170310001 is Alsip and 170314201 Northbrook, not Chicago city"
+      ]
+    },
+    {
+      "url": "https://19january2025snapshot.epa.gov/sites/default/files/2020-01/documents/r5assess2010.pdf",
+      "locations": [
+        "search-index table p84: 170310076, 7801 Lawndale, Chicago"
+      ],
+      "supports": [
+        "ComEd city location historical corroboration; current coordinates observed in CSV"
+      ]
+    }
+  ],
+  "observations": [
+    "Six site-year CSV responses retrieved into memory only: Northbrook 2023 (228866 bytes,788 rows), 2024 (149922 bytes,485 rows); Alsip 2023 (117422 bytes,408 rows), 2024 (117046 bytes,407 rows); ComEd as detailed above.",
+    "Initial site probes were geographic counterexamples; only ComEd used as Chicago example.",
+    "Each terminal HTTP body had a 1048575-byte or 1048576-byte read cap; no raw data files saved.",
+    "Public network reads succeeded after sandbox DNS failure via reviewed require_escalated calls. No approval rejection occurred.",
+    "No actual year-over-year concentration difference computed; descriptive feasibility established.",
+    "Code example request path and parsing logic executed successfully; final displayed refactoring not separately rerun."
+  ],
+  "access_errors": [
+    "Initial sandbox curl: Could not resolve host www.epa.gov.",
+    "web PDF fetch: 400 Timeout fetching.",
+    "web generated session CSV link: not accessible via this tool.",
+    "HEAD request to browser-generated CSV session: HTTP 200 Error in HTML form; independent generated requests subsequently succeeded.",
+    "pdftotext binary unavailable (exit 127); downstream curl pipe failure exit 23."
+  ],
+  "limitations": [
+    "No full Chicago site census, current neighborhood boundary mapping, certified completeness determination or final statistical comparison.",
+    "Method comparability and T640 correction applicability not independently resolved for all Chicago monitors.",
+    "Event flags not available in inspected simple CSV schema; event exclusion analysis remains unperformed.",
+    "OpenAQ Chicago coverage not verified; new EPA app export not tested.",
+    "No accounts, credentials, installs, paid APIs, remote writes or delegation."
+  ],
+  "unavailable_telemetry": [
+    "Token usage",
+    "monetary cost",
+    "model-internal reasoning duration",
+    "web tool response byte sizes"
+  ],
+  "artifacts": [
+    "[task workspace]/holdout/h1-s2/answer.md",
+    "[task workspace]/holdout/h1-s2/evidence.json"
+  ],
+  "local_reads_excluded": [
+    "All other local files",
+    "History",
+    "Memories",
+    "Protocols",
+    "Sibling outputs"
+  ]
+}
